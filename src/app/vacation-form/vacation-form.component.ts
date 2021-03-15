@@ -22,6 +22,7 @@ export class VacationFormComponent implements OnInit {
     'Doing Sports',
     'Traveling',
   ];
+  lodging: string[] = ['Hotel', 'Campground', 'RV Park'];
   constructor(
     private vacationService: VacationService,
     private sygicService: SygicService
@@ -43,6 +44,10 @@ export class VacationFormComponent implements OnInit {
       console.log(response);
     });
   };
+
+  // startingLocation = ()=>{
+  //   return this.getLocation()
+  // }
 
   // selectCategory = () => {
   //   this.sygicService.getSygicApiCategories().subscribe((response) => {
