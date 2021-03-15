@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { VacationService } from '../vacation.service';
+import { Component, OnInit } from '@angular/core'
+import { VacationService } from '../vacation.service'
 
 @Component({
   selector: 'app-home',
@@ -7,19 +7,24 @@ import { VacationService } from '../vacation.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  position: any;
+  position: any
   // userLocation: any = document.getElementById('user-location');
   constructor(private vacationService: VacationService) {}
 
   ngOnInit(): void {
-    this.getAndSetLocation();
+    this.position = this.vacationService.getLocation()
+    if (!this.position) {
+      this.getAndSetLocation()
+    }
   }
 
   getAndSetLocation = (): any => {
-    this.vacationService.setLocation();
-    this.position = this.vacationService.getLocation();
-    console.log(this.position);
-  };
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude, position.coords.longitude)
+      this.position = position
+      this.vacationService.setLocation(position)
+    })
+  }
 
   // setLocation = ():any=>{
   //   let latitude = position.coords.latitude;
