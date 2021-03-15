@@ -1,6 +1,9 @@
 <app-header></app-header>
+<p>click here to get coords</p>
+<button (click)="getAndSetLocation()">try me</button>
+
 <h2>How would you like to travel?</h2>
-<form>
+<form #userForm="ngForm" (ngSubmit)="getFormData(userForm)">
   <input
     type="radio"
     id="travel-type"
@@ -35,43 +38,48 @@
     ngModel
   />
   <label for="bicycle">Bicycle</label>
-</form>
 
-<h2>How many days would you like to spend?</h2>
-<form>
-  <select type="selector" name="travel-time" id="travel-time">
+  <h2>How many days would you like to spend?</h2>
+
+  <select type="selector" name="travel-time" id="travel-time" ngModel>
     <option value=""></option>
     <option value="1-2">1-2</option>
     <option value="3-4">3-4</option>
     <option value="5-7">5-7</option>
     <option value="7">7+</option>
   </select>
-</form>
 
-<h2>Do you need to find lodging?</h2>
-<form>
+  <h2>Do you need to find lodging?</h2>
+
   <select name="lodging" id="lodging" ngModel>
-    <option *ngFor="let sleepType of lodging" value="{{ lodging }}">
+    <option
+      *ngFor="let sleepType of lodging; index as i"
+      value="{{ lodging[i] }}"
+    >
       {{ sleepType }}
     </option>
   </select>
-  <button>Submit</button>
-</form>
+  <!-- <button>Submit</button> -->
 
-<h2>What are you looking to do?</h2>
-<form>
+  <h2>What are you looking to do?</h2>
+
   <select name="categories" id="categories" ngModel>
-    <option *ngFor="let category of categories" value="{{ categories }}">
+    <option
+      *ngFor="let category of categories; index as i"
+      value="{{ categories[i] }}"
+    >
       {{ category }}
     </option>
   </select>
-  <button>Submit</button>
-</form>
+  <!-- <button>Submit</button> -->
 
-<h2>Are there anything things you don't want to see/do?</h2>
-<form>
-  <select name="categories" id="categories" ngModel>
-    <option *ngFor="let category of categories" value="{{ categories }}">
+  <h2>Is there anything you don't want to see/do?</h2>
+
+  <select name="noNoCategories" id="noNoCategories" ngModel>
+    <option
+      *ngFor="let category of noNoCategories; index as i"
+      value="{{ noNoCategories[i] }}"
+    >
       {{ category }}
     </option>
   </select>
