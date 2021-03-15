@@ -7,16 +7,23 @@ import { VacationService } from '../vacation.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  userLocation: any = document.getElementById('user-location');
+  position: any;
+  // userLocation: any = document.getElementById('user-location');
   constructor(private vacationService: VacationService) {}
 
   ngOnInit(): void {
-    this.getLocation();
+    this.getAndSetLocation();
   }
 
-  getLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude, position.coords.longitude);
-    });
+  getAndSetLocation = (): any => {
+    this.vacationService.setLocation();
+    this.position = this.vacationService.getLocation();
+    console.log(this.position);
   };
+
+  // setLocation = ():any=>{
+  //   let latitude = position.coords.latitude;
+  //   let longitude = position.coords.longtidue;
+  //   return this
+  // }
 }

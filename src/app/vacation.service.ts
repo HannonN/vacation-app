@@ -6,6 +6,7 @@ import { secret } from './secrets';
   providedIn: 'root',
 })
 export class VacationService {
+  position: any;
   apiKey: string = secret.api_key;
   // location: string = '42.3314,-83.0458';
   // radius: string = '1600'; //roughly a mile
@@ -20,6 +21,18 @@ export class VacationService {
   getApiResults = () => {
     return this.httpClient.get(this.baseUrl, {
       headers: { 'Access-Control-Allow-Origin': '*' },
+    });
+  };
+
+  getLocation = (): any => {
+    return this.position;
+  };
+
+  setLocation = (): void => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude, position.coords.longitude);
+      this.position = position;
+      // return this.position;
     });
   };
 }

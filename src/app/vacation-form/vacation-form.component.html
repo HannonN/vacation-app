@@ -1,21 +1,46 @@
 <app-header></app-header>
 <h2>How would you like to travel?</h2>
 <form>
-  <input type="radio" id="plane" name="travel-type" ngModel />
+  <input
+    type="radio"
+    id="travel-type"
+    name="travel-type"
+    value="plane"
+    ngModel
+  />
   <label for="plane">Plane</label>
-  <input type="radio" id="train" name="travel-type" ngModel />
+  <input
+    type="radio"
+    id="travel-type"
+    name="travel-type"
+    value="train"
+    ngModel
+  />
   <label for="train">Train</label>
-  <input type="radio" id="car" name="travel-type" ngModel />
+  <input type="radio" id="travel-type" name="travel-type" value="car" ngModel />
   <label for="car">Car</label>
-  <input type="radio" id="boat" name="travel-type" ngModel />
+  <input
+    type="radio"
+    id="travel-type"
+    name="travel-type"
+    value="boat"
+    ngModel
+  />
   <label for="boat">Boat</label>
-  <input type="radio" id="bicycle" name="travel-type" ngModel />
+  <input
+    type="radio"
+    id="travel-type"
+    name="travel-type"
+    value="bicycle"
+    ngModel
+  />
   <label for="bicycle">Bicycle</label>
 </form>
 
 <h2>How many days would you like to spend?</h2>
 <form>
   <select type="selector" name="travel-time" id="travel-time">
+    <option value=""></option>
     <option value="1-2">1-2</option>
     <option value="3-4">3-4</option>
     <option value="5-7">5-7</option>
@@ -23,6 +48,17 @@
   </select>
 </form>
 
+<h2>Do you need to find lodging?</h2>
+<form>
+  <select name="lodging" id="lodging" ngModel>
+    <option *ngFor="let sleepType of lodging" value="{{ lodging }}">
+      {{ sleepType }}
+    </option>
+  </select>
+  <button>Submit</button>
+</form>
+
+<h2>What are you looking to do?</h2>
 <form>
   <select name="categories" id="categories" ngModel>
     <option *ngFor="let category of categories" value="{{ categories }}">
@@ -31,6 +67,17 @@
   </select>
   <button>Submit</button>
 </form>
+
+<h2>Are there anything things you don't want to see/do?</h2>
+<form>
+  <select name="categories" id="categories" ngModel>
+    <option *ngFor="let category of categories" value="{{ categories }}">
+      {{ category }}
+    </option>
+  </select>
+  <button>Submit</button>
+</form>
+
 <!-- <form>
   <label for="travel-type">How would you like to travel?</label>
   <input type="text" id="travel-type" name="travel-type" ngModel />
