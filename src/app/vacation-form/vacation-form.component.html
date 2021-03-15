@@ -13,6 +13,24 @@
   <label for="bicycle">Bicycle</label>
 </form>
 
+<h2>How many days would you like to spend?</h2>
+<form>
+  <select type="selector" name="travel-time" id="travel-time">
+    <option value="1-2">1-2</option>
+    <option value="3-4">3-4</option>
+    <option value="5-7">5-7</option>
+    <option value="7">7+</option>
+  </select>
+</form>
+
+<form>
+  <select name="categories" id="categories" ngModel>
+    <option *ngFor="let category of categories" value="{{ categories }}">
+      {{ category }}
+    </option>
+  </select>
+  <button>Submit</button>
+</form>
 <!-- <form>
   <label for="travel-type">How would you like to travel?</label>
   <input type="text" id="travel-type" name="travel-type" ngModel />

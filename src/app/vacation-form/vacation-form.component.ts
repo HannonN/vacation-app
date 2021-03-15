@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
 
 @Component({
@@ -7,14 +8,45 @@ import { VacationService } from '../vacation.service';
   styleUrls: ['./vacation-form.component.css'],
 })
 export class VacationFormComponent implements OnInit {
-  constructor(private vacationService: VacationService) {}
+  @Output() categoryEvent: any = new EventEmitter<string>();
+  categories: string[] = [
+    'Discovering',
+    'Eating',
+    'Going Out',
+    'Hiking',
+    'Playing',
+    'Relaxing',
+    'Shopping',
+    'Sightseeing',
+    'Sleeping',
+    'Doing Sports',
+    'Traveling',
+  ];
+  constructor(
+    private vacationService: VacationService,
+    private sygicService: SygicService
+  ) {}
 
   ngOnInit(): void {
     this.getResults();
+    this.getSygicResults();
+    // this.selectCategory();
   }
   getResults = (): void => {
     this.vacationService.getApiResults().subscribe((response: any) => {
       console.log(response);
     });
   };
+
+  getSygicResults = (): void => {
+    this.sygicService.getSygicApiResults().subscribe((response: any) => {
+      console.log(response);
+    });
+  };
+
+  // selectCategory = () => {
+  //   this.sygicService.getSygicApiCategories().subscribe((response) => {
+  //     console.dir(response);
+  //   });
+  // };
 }
