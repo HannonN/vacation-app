@@ -3,37 +3,19 @@
 <button (click)="getAndSetLocation()">try me</button>
 
 <h2>How would you like to travel?</h2>
-<form #userForm="ngForm" (ngSubmit)="getFormData(userForm)">
-  <input
-    type="radio"
-    id="travel-type"
-    name="travel-type"
-    value="plane"
-    ngModel
-  />
+<form #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
+  <input type="radio" id="travelType" name="travelType" value="plane" ngModel />
   <label for="plane">Plane</label>
-  <input
-    type="radio"
-    id="travel-type"
-    name="travel-type"
-    value="train"
-    ngModel
-  />
+  <input type="radio" id="travelType" name="travelType" value="train" ngModel />
   <label for="train">Train</label>
-  <input type="radio" id="travel-type" name="travel-type" value="car" ngModel />
+  <input type="radio" id="travelType" name="travelType" value="car" ngModel />
   <label for="car">Car</label>
-  <input
-    type="radio"
-    id="travel-type"
-    name="travel-type"
-    value="boat"
-    ngModel
-  />
+  <input type="radio" id="travelType" name="travelType" value="boat" ngModel />
   <label for="boat">Boat</label>
   <input
     type="radio"
-    id="travel-type"
-    name="travel-type"
+    id="travelType"
+    name="travelType"
     value="bicycle"
     ngModel
   />
@@ -41,7 +23,7 @@
 
   <h2>How many days would you like to spend?</h2>
 
-  <select type="selector" name="travel-time" id="travel-time" ngModel>
+  <select type="selector" name="travelTime" id="travelTime" ngModel>
     <option value=""></option>
     <option value="1-2">1-2</option>
     <option value="3-4">3-4</option>
@@ -64,24 +46,34 @@
   <h2>What are you looking to do?</h2>
 
   <select name="categories" id="categories" ngModel>
-    <option
-      *ngFor="let category of categories; index as i"
-      value="{{ categories[i] }}"
-    >
-      {{ category }}
-    </option>
+    <option value="discovering">Discovering</option>
+    <option value="eating">Eating</option>
+    <option value="going_out">Going Out</option>
+    <option value="hiking">Hiking</option>
+    <option value="playing">Playing</option>
+    <option value="relaxing">Relaxing</option>
+    <option value="shopping">Shopping</option>
+    <option value="sightseeing">Sightseeing</option>
+    <option value="sleeping">Sleeping</option>
+    <option value="doing_sports">Sports</option>
+    <option value="traveling">Traveling</option>
   </select>
   <!-- <button>Submit</button> -->
 
   <h2>Is there anything you don't want to see/do?</h2>
 
   <select name="noNoCategories" id="noNoCategories" ngModel>
-    <option
-      *ngFor="let category of noNoCategories; index as i"
-      value="{{ noNoCategories[i] }}"
-    >
-      {{ category }}
-    </option>
+    <option value="discovering">Discovering</option>
+    <option value="eating">Eating</option>
+    <option value="going_out">Going Out</option>
+    <option value="hiking">Hiking</option>
+    <option value="playing">Playing</option>
+    <option value="relaxing">Relaxing</option>
+    <option value="shopping">Shopping</option>
+    <option value="sightseeing">Sightseeing</option>
+    <option value="sleeping">Sleeping</option>
+    <option value="doing_sports">Sports</option>
+    <option value="traveling">Traveling</option>
   </select>
   <button>Submit</button>
 </form>
