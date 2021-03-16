@@ -12,7 +12,7 @@ export class VacationFormComponent implements OnInit {
   @Output() userForm: any = new EventEmitter<any>();
   categories: string[] = [
     'Discovering',
-    'Eating',
+    'eating',
     'Going Out',
     'Hiking',
     'Playing',
@@ -75,5 +75,18 @@ export class VacationFormComponent implements OnInit {
     this.userForm.emit(formData);
     console.log(formData);
     // ********!!!!!!!!!!! - need to connect the api categories with the form data/array categories above in order to filter them.
+  };
+
+  //need to convert meters to miles
+  // car : 45mph - 72,420 meters per hour -
+  // plane : 250mph - 402,336 meters per hour -
+  // train : 80mph - 128, 748 meters per hour -
+  // boat : 26mph - 41,843 meters per hour -
+  // bike : 17mph - 27,358 meters per hour -
+
+  submitTripForm = (form: NgForm) => {
+    this.sygicService.getTrips(form).subscribe((response) => {
+      console.log(response);
+    });
   };
 }
