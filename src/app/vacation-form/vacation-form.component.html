@@ -21,30 +21,33 @@
   />
   <label for="bicycle">Bicycle</label>
 
-  <h2>How many days would you like to spend?</h2>
+  <h2>How many hours do you want for travel time</h2>
 
   <select type="selector" name="travelTime" id="travelTime" ngModel>
     <option value=""></option>
-    <option value="1-2">1-2</option>
-    <option value="3-4">3-4</option>
-    <option value="5-7">5-7</option>
-    <option value="7">7+</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
   </select>
+  <!-- using later!*!*!*!*!*!*!*!**!!*!*!*!*!*!*!*!*!*!*!*!*!* -->
+  <!-- <h2>Do you need to find lodging?</h2>
 
-  <h2>Do you need to find lodging?</h2>
-
-  <select name="lodging" id="lodging" ngModel>
-    <option
-      *ngFor="let sleepType of lodging; index as i"
-      value="{{ lodging[i] }}"
-    >
-      {{ sleepType }}
-    </option>
-  </select>
+  <select name="types" id="types" ngModel>
+    <option value="lodging">Hotels</option>
+    <option value="rv_park">Rv Park</option>
+    <option value="campground">Camp Grounds</option>
+  </select> -->
   <!-- <button>Submit</button> -->
 
-  <h2>What are you looking to do?</h2>
-
+  <!-- <h2>What are you looking to do?</h2> -->
+  <!-- USING LATER!!!!!!!!!!!!!!!*!*/!*/!*/!*/!*/!*/!*/!*/!*/!
   <select name="categories" id="categories" ngModel>
     <option value="discovering">Discovering</option>
     <option value="eating">Eating</option>
@@ -57,12 +60,13 @@
     <option value="sleeping">Sleeping</option>
     <option value="doing_sports">Sports</option>
     <option value="traveling">Traveling</option>
-  </select>
+  </select> -->
   <!-- <button>Submit</button> -->
 
-  <h2>Is there anything you don't want to see/do?</h2>
+  <!-- <h2>Is there anything you don't want to see/do?</h2> -->
 
-  <select name="noNoCategories" id="noNoCategories" ngModel>
+  <!-- USING LATER!!!!!*!*/!*/!*/!*/!*/!*/!*/!-!-*!-*!-*!-*!-*!*/!*/!-*!*/!*/! -->
+  <!-- <select name="noNoCategories" id="noNoCategories" ngModel>
     <option value="discovering">Discovering</option>
     <option value="eating">Eating</option>
     <option value="going_out">Going Out</option>
@@ -75,7 +79,9 @@
     <option value="doing_sports">Sports</option>
     <option value="traveling">Traveling</option>
   </select>
-  <button>Submit</button>
+   <button>Submit</button> -->
+  -->
+  <button>try me</button>
 </form>
 
 <!-- <form>
@@ -86,3 +92,8 @@
   <label for="travel-type">How would you like to travel?</label>
   <input type="text" id="travel-type" name="travel-type" ngModel />
 </form> -->
+
+<!-- *ngFor="let sleepType of lodging; index as i"
+value="{{ lodging[i] }}"
+>
+{{ sleepType }} -->
