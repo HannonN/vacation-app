@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vacation-card',
   templateUrl: './vacation-card.component.html',
-  styleUrls: ['./vacation-card.component.css']
+  styleUrls: ['./vacation-card.component.css'],
 })
 export class VacationCardComponent implements OnInit {
+  @Input() tripRef: any; //should this be an array?
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
