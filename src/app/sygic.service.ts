@@ -4,6 +4,7 @@ import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { secret } from './secrets';
+import { myTags } from './tags';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class SygicService {
   sygicApiKey: string = secret.sygicApiKey;
   sygicBaseUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list/?limit=1024`;
   // sygicCategoriesUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list?categories=hiking`;
+  tags: string[] = myTags;
   categories: string[] = [
     'discovering',
     'eating',
@@ -38,16 +40,21 @@ export class SygicService {
   //   });
   // };
 
-  // makeCategories = (obj: any) => {
-  //   let categoriesString: string = '';
-  //   for (let prop in obj) {
-  //     console.log(prop);
-  //   }
-  // };
+  makeCategories = (obj: any) => {
+    let categoriesString: string = '';
+    for (let prop in obj) {
+      if (this.categories.includes(prop)) {
+        if (!categoriesString) {
+          categoriesString += prop;
+        } else {
+          categoriesString += `|${prop}`;
+        }
+      }
+    }
+    return categoriesString;
+  };
 
   getItemsFromSygic = (obj: any) => {
-    console.log(obj);
-
     let hours = obj.travelTime;
     let radius = 0;
     if (obj.travelType === 'car') {
@@ -65,7 +72,7 @@ export class SygicService {
     }
     let params: any = {
       area: `${obj.lat},${obj.lon},${radius}`,
-      categories: 'hiking|sightseeing',
+      categories: this.makeCategories(obj),
     };
 
     console.log(params);

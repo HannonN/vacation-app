@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 @Component({
   selector: 'app-vacation-form',
@@ -11,6 +12,9 @@ import { VacationService } from '../vacation.service';
 })
 export class VacationFormComponent implements OnInit {
   @Output() userForm: any = new EventEmitter<any>();
+  dropdownList = [];
+  selectedItems = [];
+  dropdownSettings = {};
   categories: string[] = [
     'Discovering',
     'eating',
@@ -39,6 +43,7 @@ export class VacationFormComponent implements OnInit {
   ];
   lodging: string[] = ['Hotel', 'Campground', 'RV Park'];
   position: any;
+
   constructor(
     private router: Router,
     private vacationService: VacationService,
@@ -52,6 +57,7 @@ export class VacationFormComponent implements OnInit {
     if (!this.position) {
       this.getAndSetLocation();
     }
+    this.dropdownList = [];
   }
 
   getAndSetLocation = (): any => {
@@ -87,8 +93,7 @@ export class VacationFormComponent implements OnInit {
     this.clean(obj);
     obj.lat = this.position.coords.latitude;
     obj.lon = this.position.coords.longitude;
-    obj.travelTime = form.form.value.travelTime;
-    obj.travelType = form.form.value.travelType;
+
     this.router.navigate(['/vacation-result'], {
       queryParams: obj,
     });
