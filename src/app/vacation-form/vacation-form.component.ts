@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core'
-import { NgForm } from '@angular/forms'
-import { Router } from '@angular/router'
-import { SygicService } from '../sygic.service'
-import { VacationService } from '../vacation.service'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SygicService } from '../sygic.service';
+import { VacationService } from '../vacation.service';
 
 @Component({
   selector: 'app-vacation-form',
@@ -10,7 +10,7 @@ import { VacationService } from '../vacation.service'
   styleUrls: ['./vacation-form.component.css'],
 })
 export class VacationFormComponent implements OnInit {
-  @Output() userForm: any = new EventEmitter<any>()
+  @Output() userForm: any = new EventEmitter<any>();
   categories: string[] = [
     'Discovering',
     'eating',
@@ -23,7 +23,7 @@ export class VacationFormComponent implements OnInit {
     'Sleeping',
     'Doing Sports',
     'Traveling',
-  ]
+  ];
   noNoCategories: string[] = [
     'Discovering',
     'Eating',
@@ -36,9 +36,9 @@ export class VacationFormComponent implements OnInit {
     'Sleeping',
     'Doing Sports',
     'Traveling',
-  ]
-  lodging: string[] = ['Hotel', 'Campground', 'RV Park']
-  position: any
+  ];
+  lodging: string[] = ['Hotel', 'Campground', 'RV Park'];
+  position: any;
   constructor(
     private router: Router,
     private vacationService: VacationService,
@@ -48,24 +48,24 @@ export class VacationFormComponent implements OnInit {
   ngOnInit(): void {
     // this.getResults()
     // this.getSygicResults()
-    this.position = this.vacationService.getLocation()
+    this.position = this.vacationService.getLocation();
     if (!this.position) {
-      this.getAndSetLocation()
+      this.getAndSetLocation();
     }
   }
 
   getAndSetLocation = (): any => {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude, position.coords.longitude)
-      this.position = position
-      this.vacationService.setLocation(position)
-    })
-  }
+      console.log(position.coords.latitude, position.coords.longitude);
+      this.position = position;
+      this.vacationService.setLocation(position);
+    });
+  };
 
   getFormData = (formData: NgForm): void => {
-    this.userForm.emit(formData)
-    console.log(formData)
-  }
+    this.userForm.emit(formData);
+    console.log(formData);
+  };
 
   //need to convert meters to miles
   // car : 45mph - 72,420 meters per hour -
@@ -73,19 +73,24 @@ export class VacationFormComponent implements OnInit {
   // train : 80mph - 128, 748 meters per hour -
   // boat : 26mph - 41,843 meters per hour -
   // bike : 17mph - 27,358 meters per hour -
-  submitTripForm = (form: NgForm) => {
-    console.log(this.position.coords.latitude)
-
-    let obj: any = {
-      lat: this.position.coords.latitude,
-      lon: this.position.coords.longitude,
-      travelTime: form.form.value.travelTime,
-      travelType: form.form.value.travelType,
+  clean = (obj: any) => {
+    for (let prop in obj) {
+      if (!obj[prop]) {
+        delete obj[prop];
+      }
     }
-    this.sygicService.getItemsFromSygic(obj).subscribe((response) => {
-      this.router.navigate(['/vacation-result'], {
-        queryParams: obj,
-      })
-    })
-  }
+    console.log(obj);
+  };
+
+  submitTripForm = (form: NgForm) => {
+    let obj: any = form.form.value;
+    this.clean(obj);
+    obj.lat = this.position.coords.latitude;
+    obj.lon = this.position.coords.longitude;
+    obj.travelTime = form.form.value.travelTime;
+    obj.travelType = form.form.value.travelType;
+    this.router.navigate(['/vacation-result'], {
+      queryParams: obj,
+    });
+  };
 }
