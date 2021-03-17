@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { VacationFormComponent } from './vacation-form/vacation-form.component';
 import { VacationResultComponent } from './vacation-result/vacation-result.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { VacationCardComponent } from './vacation-card/vacation-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     VacationFormComponent,
     VacationResultComponent,
     NotFoundComponent,
+    VacationCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
