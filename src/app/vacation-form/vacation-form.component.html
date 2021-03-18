@@ -91,6 +91,7 @@
     ngModel
   />
   <label for="doing_sports">Sports</label>
+
   <!-- using later!*!*!*!*!*!*!*!**!!*!*!*!*!*!*!*!*!*!*!*!*!* -->
   <!-- <h2>Do you need to find lodging?</h2>
 
@@ -138,6 +139,31 @@
 
   <button>try me</button>
 </form>
+<!-- <div class="container text-container"> -->
+<ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+  <ng-template
+    #optionsTemplate
+    let-item
+    let-option="option"
+    let-id="id"
+    let-isSelected="isSelected"
+  >
+    <div style="padding: 1px 10px; margin-right: 10px; right: 2px; top: -2px">
+      <label>hello!</label>
+    </div>
+  </ng-template>
+  <ng-template #optionSelectedTemplate let-option="option" let-id="id">
+    <div>option</div>
+  </ng-template>
+</ng-multiselect-dropdown>
+<!-- </div> -->
 
 <!-- <form>
   <label for="travel-type">How would you like to travel?</label>
