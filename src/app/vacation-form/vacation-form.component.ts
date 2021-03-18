@@ -19,13 +19,11 @@ export class VacationFormComponent implements OnInit {
   selectedItems: any = [];
   dropdownSettings: IDropdownSettings = {};
   position: any;
-
   constructor(
     private router: Router,
     private vacationService: VacationService,
     private sygicService: SygicService
   ) {}
-
   ngOnInit(): void {
     this.position = this.vacationService.getLocation();
     if (!this.position) {
@@ -39,7 +37,6 @@ export class VacationFormComponent implements OnInit {
       allowSearchFilter: true,
     };
   }
-
   getAndSetLocation = (): any => {
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position.coords.latitude, position.coords.longitude);
@@ -47,12 +44,10 @@ export class VacationFormComponent implements OnInit {
       this.vacationService.setLocation(position);
     });
   };
-
   getFormData = (formData: NgForm): void => {
     this.userForm.emit(formData);
     console.log(formData);
   };
-
   // clean = (obj: any) => {
   //   for (let prop in obj) {
   //     if (!obj[prop]) {
@@ -62,9 +57,9 @@ export class VacationFormComponent implements OnInit {
   //   console.log(obj);
   // };
 
+
   submitTripForm = (form: NgForm) => {
     console.log(this.selectedItems);
-
     let obj: any = form.form.value;
     // this.clean(obj);
     obj.lat = this.position.coords.latitude;

@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <h2>How would you like to travel?</h2>
 <form #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
   <input type="radio" id="travelType" name="travelType" value="plane" ngModel />
@@ -18,9 +17,7 @@
     ngModel
   />
   <label for="bicycle">Bicycle</label>
-
   <h2>How long do you want to spend traveling?</h2>
-
   <select type="selector" name="travelTime" id="travelTime" ngModel>
     <option value=""></option>
     <option value="1">1 Hours</option>

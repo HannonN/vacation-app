@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { secret } from './secrets';
 import { myTags } from './tags';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -16,13 +15,11 @@ export class SygicService {
   tags: string[] = myTags;
   tagListString: string = '';
   constructor(private httpClient: HttpClient) {}
-
   getSygicApiResults = () => {
     return this.httpClient.get(this.sygicBaseUrl, {
       headers: { 'x-api-key': `${this.sygicApiKey}` },
     });
   };
-
   // getSygicApiCategories = () => {
   //   return this.httpClient.get(this.sygicCategoriesUrl, {
   //     headers: { 'x-api-key': `${this.sygicApiKey}` },
@@ -57,7 +54,6 @@ export class SygicService {
       area: `${obj.lat},${obj.lon},${radius}`,
       tags: this.tagListString,
     };
-
     console.log(params);
     return this.httpClient.get(`${this.sygicBaseUrl}`, {
       headers: {
