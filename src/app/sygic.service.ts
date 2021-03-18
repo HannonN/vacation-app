@@ -26,6 +26,7 @@ export class SygicService {
   //     // params: { categories: `${this.sygicCategoriesUrl}` },
   //   });
   // };
+
   //need to convert meters to miles
   // car : 45mph - 72,420 meters per hour -
   // plane : 250mph - 402,336 meters per hour -

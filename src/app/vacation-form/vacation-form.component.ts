@@ -5,6 +5,7 @@ import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { myTags } from '../tags';
+
 @Component({
   selector: 'app-vacation-form',
   templateUrl: './vacation-form.component.html',
@@ -55,6 +56,8 @@ export class VacationFormComponent implements OnInit {
   //   }
   //   console.log(obj);
   // };
+
+
   submitTripForm = (form: NgForm) => {
     console.log(this.selectedItems);
     let obj: any = form.form.value;
@@ -66,6 +69,7 @@ export class VacationFormComponent implements OnInit {
       queryParams: obj,
     });
   };
+
   onItemSelect(item: any) {
     console.log(item);
     this.tagsList.push(item);

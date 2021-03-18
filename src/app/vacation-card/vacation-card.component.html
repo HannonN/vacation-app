@@ -1,4 +1,4 @@
-<div class="main-result" *ngFor="let result of results; index as i">
+<div class="main-result" *ngFor="let trip of tripRef?.places; index as i">
   <p class="title">{{ tripRef.places[i].name }}</p>
   <p class="title">{{ tripRef.places[i].thumbnail_url }}</p>
   <p class="place">{{ tripRef.places[i].name_suffix }}</p>
