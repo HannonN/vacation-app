@@ -14,17 +14,7 @@ export class SygicService {
   sygicBaseUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list/?limit=1024`;
   // sygicCategoriesUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list?categories=hiking`;
   tags: string[] = myTags;
-  categories: string[] = [
-    'discovering',
-    'eating',
-    'going_out',
-    'hiking',
-    'playing',
-    'relaxing',
-    'shopping',
-    'sightseeing',
-    'doing_sports',
-  ];
+  tagListString: string = '';
   constructor(private httpClient: HttpClient) {}
 
   getSygicApiResults = () => {
@@ -39,20 +29,6 @@ export class SygicService {
   //     // params: { categories: `${this.sygicCategoriesUrl}` },
   //   });
   // };
-
-  makeCategories = (obj: any) => {
-    let categoriesString: string = '';
-    for (let prop in obj) {
-      if (this.categories.includes(prop)) {
-        if (!categoriesString) {
-          categoriesString += prop;
-        } else {
-          categoriesString += `|${prop}`;
-        }
-      }
-    }
-    return categoriesString;
-  };
 
   //need to convert meters to miles
   // car : 45mph - 72,420 meters per hour -
@@ -76,9 +52,10 @@ export class SygicService {
     } else {
       radius = 160934;
     }
+    this.makeString(obj.tags);
     let params: any = {
       area: `${obj.lat},${obj.lon},${radius}`,
-      categories: this.makeCategories(obj),
+      tags: this.tagListString,
     };
 
     console.log(params);
@@ -88,5 +65,8 @@ export class SygicService {
       },
       params: params,
     });
+  };
+  makeString = (anArray: any) => {
+    this.tagListString = anArray.join('|');
   };
 }

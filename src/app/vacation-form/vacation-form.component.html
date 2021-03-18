@@ -35,7 +35,7 @@
     <option value="10">10 Hours</option>
   </select>
 
-  <input
+  <!-- <input
     type="checkbox"
     id="discovering"
     name="discovering"
@@ -88,8 +88,16 @@
     value="doing_sports"
     ngModel
   />
-  <label for="doing_sports">Sports</label>
-
+  <label for="doing_sports">Sports</label> -->
+  <ng-multiselect-dropdown
+    [placeholder]="'Search for tags'"
+    [settings]="dropdownSettings"
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+  >
+  </ng-multiselect-dropdown>
   <button>Get Trips</button>
 </form>
+
 <!-- <div class="container text-container"> -->
