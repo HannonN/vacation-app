@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { myTags } from '../tags';
 
 @Component({
   selector: 'app-vacation-form',
@@ -13,9 +14,9 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 export class VacationFormComponent implements OnInit {
   @Output() userForm: any = new EventEmitter<any>();
   @Output() selectTags: any = new EventEmitter<any>();
-  dropdownList: any = [];
+  dropdownList: any = myTags;
   selectedItems: any = [];
-  dropdownSettings: any = {};
+  dropdownSettings: IDropdownSettings = {};
   position: any;
 
   constructor(
@@ -29,6 +30,13 @@ export class VacationFormComponent implements OnInit {
     if (!this.position) {
       this.getAndSetLocation();
     }
+    this.selectedItems = [];
+    this.dropdownSettings = {
+      singleSelection: false,
+      enableCheckAll: false,
+      itemsShowLimit: 5,
+      allowSearchFilter: true,
+    };
   }
 
   getAndSetLocation = (): any => {
@@ -63,4 +71,8 @@ export class VacationFormComponent implements OnInit {
       queryParams: obj,
     });
   };
+
+  onItemSelect(item: any) {
+    console.log(this.selectedItems);
+  }
 }

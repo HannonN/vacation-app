@@ -90,6 +90,15 @@
   />
   <label for="doing_sports">Sports</label>
 
+  <ng-multiselect-dropdown
+    [placeholder]="'What '"
+    [settings]="dropdownSettings"
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+  >
+  </ng-multiselect-dropdown>
+
   <button>Get Trips</button>
 </form>
 <!-- <div class="container text-container"> -->
