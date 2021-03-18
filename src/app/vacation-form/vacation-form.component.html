@@ -1,6 +1,4 @@
 <app-header></app-header>
-<p>click here to get coords</p>
-<button (click)="getAndSetLocation()">try me</button>
 
 <h2>How would you like to travel?</h2>
 <form #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
@@ -21,20 +19,20 @@
   />
   <label for="bicycle">Bicycle</label>
 
-  <h2>How many hours do you want for travel time</h2>
+  <h2>How long do you want to spend traveling?</h2>
 
   <select type="selector" name="travelTime" id="travelTime" ngModel>
     <option value=""></option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
+    <option value="1">1 Hours</option>
+    <option value="2">2 Hours</option>
+    <option value="3">3 Hours</option>
+    <option value="4">4 Hours</option>
+    <option value="5">5 Hours</option>
+    <option value="6">6 Hours</option>
+    <option value="7">7 Hours</option>
+    <option value="8">8 Hours</option>
+    <option value="9">9 Hours</option>
+    <option value="10">10 Hours</option>
   </select>
 
   <input
@@ -92,89 +90,6 @@
   />
   <label for="doing_sports">Sports</label>
 
-  <!-- using later!*!*!*!*!*!*!*!**!!*!*!*!*!*!*!*!*!*!*!*!*!* -->
-  <!-- <h2>Do you need to find lodging?</h2>
-
-  <select name="types" id="types" ngModel>
-    <option value="lodging">Hotels</option>
-    <option value="rv_park">Rv Park</option>
-    <option value="campground">Camp Grounds</option>
-  </select> -->
-  <!-- <button>Submit</button> -->
-
-  <!-- <h2>What are you looking to do?</h2> -->
-  <!-- USING LATER!!!!!!!!!!!!!!!*!*/!*/!*/!*/!*/!*/!*/!*/!*/!
-  <select name="categories" id="categories" ngModel>
-    <option value="discovering">Discovering</option>
-    <option value="eating">Eating</option>
-    <option value="going_out">Going Out</option>
-    <option value="hiking">Hiking</option>
-    <option value="playing">Playing</option>
-    <option value="relaxing">Relaxing</option>
-    <option value="shopping">Shopping</option>
-    <option value="sightseeing">Sightseeing</option>
-    <option value="sleeping">Sleeping</option>
-    <option value="doing_sports">Sports</option>
-    <option value="traveling">Traveling</option>
-  </select> -->
-  <!-- <button>Submit</button> -->
-
-  <!-- <h2>Is there anything you don't want to see/do?</h2> -->
-
-  <!-- USING LATER!!!!!*!*/!*/!*/!*/!*/!*/!*/!-!-*!-*!-*!-*!-*!*/!*/!-*!*/!*/! -->
-  <!-- <select name="noNoCategories" id="noNoCategories" ngModel>
-    <option value="discovering">Discovering</option>
-    <option value="eating">Eating</option>
-    <option value="going_out">Going Out</option>
-    <option value="hiking">Hiking</option>
-    <option value="playing">Playing</option>
-    <option value="relaxing">Relaxing</option>
-    <option value="shopping">Shopping</option>
-    <option value="sightseeing">Sightseeing</option>
-    <option value="sleeping">Sleeping</option>
-    <option value="doing_sports">Sports</option>
-    <option value="traveling">Traveling</option>
-  </select>
-   <button>Submit</button> -->
-
-  <button>try me</button>
+  <button>Get Trips</button>
 </form>
 <!-- <div class="container text-container"> -->
-<ng-multiselect-dropdown
-  [placeholder]="'custom placeholder'"
-  [data]="dropdownList"
-  [(ngModel)]="selectedItems"
-  [settings]="dropdownSettings"
-  (onSelect)="onItemSelect($event)"
-  (onSelectAll)="onSelectAll($event)"
->
-  <ng-template
-    #optionsTemplate
-    let-item
-    let-option="option"
-    let-id="id"
-    let-isSelected="isSelected"
-  >
-    <div style="padding: 1px 10px; margin-right: 10px; right: 2px; top: -2px">
-      <label>hello!</label>
-    </div>
-  </ng-template>
-  <ng-template #optionSelectedTemplate let-option="option" let-id="id">
-    <div>option</div>
-  </ng-template>
-</ng-multiselect-dropdown>
-<!-- </div> -->
-
-<!-- <form>
-  <label for="travel-type">How would you like to travel?</label>
-  <input type="text" id="travel-type" name="travel-type" ngModel />
-  <label for="travel-type">How would you like to travel?</label>
-  <input type="text" id="travel-type" name="travel-type" ngModel />
-  <label for="travel-type">How would you like to travel?</label>
-  <input type="text" id="travel-type" name="travel-type" ngModel />
-</form> -->
-
-<!-- *ngFor="let sleepType of lodging; index as i"
-value="{{ lodging[i] }}"
->
-{{ sleepType }} -->
