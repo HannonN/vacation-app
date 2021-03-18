@@ -7,11 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class VacationCardComponent implements OnInit {
   @Input() tripRef: any; //should this be an array?
-  trips: any;
-  name: any;
-  name_suffix: any;
-  thumbnail_url: any;
-  details: any;
 
   constructor() {}
 
