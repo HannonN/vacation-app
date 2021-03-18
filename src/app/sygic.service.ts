@@ -14,6 +14,13 @@ export class SygicService {
   // sygicCategoriesUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list?categories=hiking`;
   tags: string[] = myTags;
   tagListString: string = '';
+  destinationTags: string[] = [
+    'Market',
+    'Park',
+    'Restaurant',
+    'Museums',
+    'Hidden Gem',
+  ];
   constructor(private httpClient: HttpClient) {}
   getSygicApiResults = () => {
     return this.httpClient.get(this.sygicBaseUrl, {
@@ -65,4 +72,18 @@ export class SygicService {
   makeString = (anArray: any) => {
     this.tagListString = anArray.join('|');
   };
+  // allow a vacatio to be selected,
+  // when selected, send the coords to the service for a repeat
+  // endpoint call with the given params.
+  // yet to be called correctly in the card.ts
+  pickADestination = () => {};
+
+  // destinationResults = (form:NgForm)=>{
+  //   obj.lat = ;
+  //   obj.lon = ;
+  //   let params:any = {
+  //     area:`${obj.lat},${obj.lon},20`
+  //     tags:
+  //   }
+  // }
 }

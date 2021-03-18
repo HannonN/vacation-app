@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SygicService } from '../sygic.service';
 
 @Component({
   selector: 'app-vacation-card',
@@ -8,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class VacationCardComponent implements OnInit {
   @Input() tripRef: any; //should this be an array?
 
-  constructor() {}
+  constructor(private sygicService: SygicService) {}
 
   ngOnInit(): void {}
 
-  showTrip = (): void => {};
+  // card to be picked, reacting from the method called in the service.
+  chosenDestination = () => {
+    this.sygicService.pickADestination();
+  };
 }
