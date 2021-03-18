@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
@@ -14,6 +14,7 @@ import { myTags } from '../tags';
 export class VacationFormComponent implements OnInit {
   @Output() userForm: any = new EventEmitter<any>();
   @Output() selectTags: any = new EventEmitter<any>();
+  tagsList: any = [];
   dropdownList: any = myTags;
   selectedItems: any = [];
   dropdownSettings: IDropdownSettings = {};
@@ -52,27 +53,30 @@ export class VacationFormComponent implements OnInit {
     console.log(formData);
   };
 
-  clean = (obj: any) => {
-    for (let prop in obj) {
-      if (!obj[prop]) {
-        delete obj[prop];
-      }
-    }
-    console.log(obj);
-  };
+  // clean = (obj: any) => {
+  //   for (let prop in obj) {
+  //     if (!obj[prop]) {
+  //       delete obj[prop];
+  //     }
+  //   }
+  //   console.log(obj);
+  // };
 
   submitTripForm = (form: NgForm) => {
+    console.log(this.selectedItems);
+
     let obj: any = form.form.value;
-    this.clean(obj);
+    // this.clean(obj);
     obj.lat = this.position.coords.latitude;
     obj.lon = this.position.coords.longitude;
-
+    obj.tags = this.tagsList;
     this.router.navigate(['/vacation-result'], {
       queryParams: obj,
     });
   };
 
   onItemSelect(item: any) {
-    console.log(this.selectedItems);
+    console.log(item);
+    this.tagsList.push(item);
   }
 }
