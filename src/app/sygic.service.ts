@@ -54,6 +54,12 @@ export class SygicService {
     return categoriesString;
   };
 
+  //need to convert meters to miles
+  // car : 45mph - 72,420 meters per hour -
+  // plane : 250mph - 402,336 meters per hour -
+  // train : 80mph - 128, 748 meters per hour -
+  // boat : 26mph - 41,843 meters per hour -
+  // bike : 17mph - 27,358 meters per hour -
   getItemsFromSygic = (obj: any) => {
     let hours = obj.travelTime;
     let radius = 0;
