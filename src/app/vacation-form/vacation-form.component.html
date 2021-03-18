@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <h2>How would you like to travel?</h2>
 <form #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
   <input type="radio" id="travelType" name="travelType" value="plane" ngModel />
@@ -18,9 +17,7 @@
     ngModel
   />
   <label for="bicycle">Bicycle</label>
-
   <h2>How long do you want to spend traveling?</h2>
-
   <select type="selector" name="travelTime" id="travelTime" ngModel>
     <option value=""></option>
     <option value="1">1 Hours</option>
@@ -34,8 +31,7 @@
     <option value="9">9 Hours</option>
     <option value="10">10 Hours</option>
   </select>
-
-  <input
+  <!-- <input
     type="checkbox"
     id="discovering"
     name="discovering"
@@ -88,8 +84,15 @@
     value="doing_sports"
     ngModel
   />
-  <label for="doing_sports">Sports</label>
-
+  <label for="doing_sports">Sports</label> -->
+  <ng-multiselect-dropdown
+    [placeholder]="'Search for tags'"
+    [settings]="dropdownSettings"
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+  >
+  </ng-multiselect-dropdown>
   <button>Get Trips</button>
 </form>
 <!-- <div class="container text-container"> -->
