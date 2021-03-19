@@ -27,7 +27,8 @@ export class VacationFormComponent implements OnInit {
   ngOnInit(): void {
     this.position = this.vacationService.getLocation()
     if (!this.position) {
-      this.getAndSetLocation()
+      this.vacationService.setLocation()
+      this.position = this.vacationService.getLocation()
     }
     this.selectedItems = []
     this.dropdownSettings = {
@@ -37,13 +38,13 @@ export class VacationFormComponent implements OnInit {
       allowSearchFilter: true,
     }
   }
-  getAndSetLocation = (): any => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude, position.coords.longitude)
-      this.position = position
-      this.vacationService.setLocation(position)
-    })
-  }
+  // getAndSetLocation = (): any => {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     console.log(position.coords.latitude, position.coords.longitude)
+  //     this.position = position
+  //     this.vacationService.setLocation(position)
+  //   })
+  // }
   getFormData = (formData: NgForm): void => {
     this.userForm.emit(formData)
     console.log(formData)
@@ -73,11 +74,4 @@ export class VacationFormComponent implements OnInit {
     console.log(item)
     this.tagsList.push(item)
   }
-  // pythagorean = (sideA: any, sideB: any) => {
-  //   let startLat = this.position.coords.latitude
-  //   let startLon = this.position.coords.longitude
-  //   let tripLat =
-  //   return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2))
-  //   console.log(this.pythagorean(4, 3))
-  // }
 }
