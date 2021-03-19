@@ -90,5 +90,6 @@ export class SygicService {
         currentIndex--
       }
     }
+    return copy
   }
 }

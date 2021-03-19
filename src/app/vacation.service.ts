@@ -23,12 +23,18 @@ export class VacationService {
     })
   }
 
-  setLocation = (position: any): void => {
-    this.position = position
-  }
+  // setLocation = (position: any): void => {
+  //   this.position = position
+  // }
 
   getLocation = (): any => {
     return this.position
+  }
+  setLocation = (): any => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude, position.coords.longitude)
+      this.position = position
+    })
   }
 
   // getLodging = (obj: any) => {
