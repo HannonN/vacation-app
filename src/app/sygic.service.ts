@@ -14,13 +14,7 @@ export class SygicService {
   // sygicCategoriesUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list?categories=hiking`;
   tags: string[] = myTags;
   tagListString: string = '';
-  destinationTags: string[] = [
-    'Market',
-    'Park',
-    'Restaurant',
-    'Museums',
-    'Hidden Gem',
-  ];
+
   constructor(private httpClient: HttpClient) {}
   getSygicApiResults = () => {
     return this.httpClient.get(this.sygicBaseUrl, {
@@ -41,22 +35,27 @@ export class SygicService {
   // boat : 26mph - 41,843 meters per hour -
   // bike : 17mph - 27,358 meters per hour -
   getItemsFromSygic = (obj: any) => {
-    let hours = obj.travelTime;
     let radius = 0;
-    if (obj.travelType === 'car') {
-      radius = hours * 72420;
-    } else if (obj.travelType === 'plane') {
-      radius = hours * 402336;
-    } else if (obj.travelType === 'train') {
-      radius = hours * 128748;
-    } else if (obj.travelType === 'boat') {
-      radius = hours * 41843;
-    } else if (obj.travelType === 'bicycle') {
-      radius = hours * 27358;
+    if (obj.travelType) {
+      this.makeString(obj.tags);
+      let hours = obj.travelTime;
+      if (obj.travelType === 'car') {
+        radius = hours * 72420;
+      } else if (obj.travelType === 'plane') {
+        radius = hours * 402336;
+      } else if (obj.travelType === 'train') {
+        radius = hours * 128748;
+      } else if (obj.travelType === 'boat') {
+        radius = hours * 41843;
+      } else if (obj.travelType === 'bicycle') {
+        radius = hours * 27358;
+      } else {
+        radius = 160934;
+      }
     } else {
-      radius = 160934;
+      this.tagListString = obj.tags;
+      radius = obj.radius;
     }
-    this.makeString(obj.tags);
     let params: any = {
       area: `${obj.lat},${obj.lon},${radius}`,
       tags: this.tagListString,
@@ -76,7 +75,6 @@ export class SygicService {
   // when selected, send the coords to the service for a repeat
   // endpoint call with the given params.
   // yet to be called correctly in the card.ts
-  pickADestination = () => {};
 
   // destinationResults = (form:NgForm)=>{
   //   obj.lat = ;

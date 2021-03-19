@@ -1,0 +1,47 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5%;
+}
+.logo {
+  display: inline-block;
+  width: 50vw;
+  height: auto;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: url(http://hop.ie/balls/images/tennisball.png) no-repeat;
+  background-size: 100%;
+}
+.logo:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 0px,
+    #ffffff,
+    rgba(255, 255, 255, 0) 58%
+  );
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+.logo:after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(245, 237, 48, 0),
+    rgba(200, 190, 20, 0.2) 50%,
+    #575300 100%
+  );
+}

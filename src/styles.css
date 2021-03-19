@@ -5,4 +5,36 @@ body {
 }
 body {
   font-family: "M PLUS 1p", sans-serif;
+  color: #ffffff;
+}
+
+.btn {
+  color: #ffffff;
+  border-radius: 15%;
+  padding: 5%;
+  border-color: #ffffff;
+  opacity: 0.9;
+  background: none;
+}
+
+.btn:hover {
+  background-color: #f38262;
+  box-shadow: 2px 3px 5px #344d90;
+}
+
+html {
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 0; */
+  bottom: 0;
+  /* left: 0;  */
+  background-image: linear-gradient(to bottom, #5ac3ddc9, #344d90);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  z-index: -2;
+}
+
+html {
+  background-color: #344d90;
 }

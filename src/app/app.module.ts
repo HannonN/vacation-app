@@ -13,6 +13,7 @@ import { VacationFormComponent } from './vacation-form/vacation-form.component';
 import { VacationResultComponent } from './vacation-result/vacation-result.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { VacationCardComponent } from './vacation-card/vacation-card.component';
+import { VacationDestinationComponent } from './vacation-destination/vacation-destination.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { VacationCardComponent } from './vacation-card/vacation-card.component';
     VacationResultComponent,
     NotFoundComponent,
     VacationCardComponent,
+    VacationDestinationComponent,
   ],
   imports: [
     BrowserModule,
