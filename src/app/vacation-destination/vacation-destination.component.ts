@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { SygicService } from '../sygic.service';
+import { Component, Input, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+import { SygicService } from '../sygic.service'
 
 @Component({
   selector: 'app-vacation-destination',
@@ -8,6 +8,7 @@ import { SygicService } from '../sygic.service';
   styleUrls: ['./vacation-destination.component.css'],
 })
 export class VacationDestinationComponent implements OnInit {
+  @Input() tripRef: any
   constructor(
     private sygicService: SygicService,
     private route: ActivatedRoute
@@ -18,8 +19,8 @@ export class VacationDestinationComponent implements OnInit {
       this.sygicService
         .getItemsFromSygic(response.params)
         .subscribe((response) => {
-          console.log(response);
-        });
-    });
+          console.log(response)
+        })
+    })
   }
 }

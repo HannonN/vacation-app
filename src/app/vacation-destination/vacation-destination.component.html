@@ -1,1 +1,8 @@
 <app-header></app-header>
+<app-vacation-card></app-vacation-card>
+<div class="main-result">
+  <p class="title">{{ tripRef.name }}</p>
+  <img src="{{ tripRef.thumbnail_url }}" alt="thumbnail" />
+  <p class="place">{{ tripRef.name_suffix }}</p>
+  <p class="details">{{ tripRef.perex }}</p>
+</div>
