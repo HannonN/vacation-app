@@ -9,6 +9,7 @@ import { SygicService } from '../sygic.service'
 })
 export class VacationDestinationComponent implements OnInit {
   @Input() tripRef: any
+  trips: any
   constructor(
     private sygicService: SygicService,
     private route: ActivatedRoute
@@ -18,8 +19,8 @@ export class VacationDestinationComponent implements OnInit {
     this.route.queryParamMap.subscribe((response: any) => {
       this.sygicService
         .getItemsFromSygic(response.params)
-        .subscribe((response) => {
-          console.log(response)
+        .subscribe((response: any) => {
+          this.trips = response.data.places
         })
     })
   }

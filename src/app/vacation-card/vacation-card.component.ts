@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { SygicService } from '../sygic.service';
+import { Component, Input, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { SygicService } from '../sygic.service'
 
 @Component({
   selector: 'app-vacation-card',
@@ -8,14 +8,14 @@ import { SygicService } from '../sygic.service';
   styleUrls: ['./vacation-card.component.css'],
 })
 export class VacationCardComponent implements OnInit {
-  @Input() tripRef: any; //should this be an array?
+  @Input() tripRef: any //should this be an array?
   destinationTags: string[] = [
     'Market',
     'Park',
     'Restaurant',
     'Museums',
     'Hidden Gem',
-  ];
+  ]
 
   constructor(private sygicService: SygicService, private router: Router) {}
 
@@ -27,10 +27,11 @@ export class VacationCardComponent implements OnInit {
         lat: coords.lat,
         lon: coords.lng,
         radius: 3200,
+        limit: 20,
         tags: this.destinationTags.join('|'),
       },
-    });
-  };
+    })
+  }
 
   // // card to be picked, reacting from the method called in the service.
   // chosenDestination = (coords: any) => {
