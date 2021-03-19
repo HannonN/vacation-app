@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SygicService } from '../sygic.service';
 
 @Component({
@@ -8,13 +9,37 @@ import { SygicService } from '../sygic.service';
 })
 export class VacationCardComponent implements OnInit {
   @Input() tripRef: any; //should this be an array?
+  destinationTags: string[] = [
+    'Market',
+    'Park',
+    'Restaurant',
+    'Museums',
+    'Hidden Gem',
+  ];
 
-  constructor(private sygicService: SygicService) {}
+  constructor(private sygicService: SygicService, private router: Router) {}
 
   ngOnInit(): void {}
 
-  // card to be picked, reacting from the method called in the service.
-  chosenDestination = () => {
-    this.sygicService.pickADestination();
+  goAndSetUrl = (coords: any) => {
+    this.router.navigate(['/vacation-destination'], {
+      queryParams: {
+        lat: coords.lat,
+        lon: coords.lng,
+        radius: 3200,
+        tags: this.destinationTags.join('|'),
+      },
+    });
   };
+
+  // // card to be picked, reacting from the method called in the service.
+  // chosenDestination = (coords: any) => {
+  //   console.log(coords);
+  //   let newObj = {
+  //     ...coords,
+  //     radius: 32000,
+  //     tags: this.destinationTags,
+  //   };
+  //   this.sygicService.getItemsFromSygic(newObj).subscribe((response) => {});
+  // };
 }

@@ -3,5 +3,5 @@
   <img src="{{ tripRef.thumbnail_url }}" alt="thumbnail" />
   <p class="place">{{ tripRef.name_suffix }}</p>
   <p class="details">{{ tripRef.perex }}</p>
-  <button class="btn" (onClick)="chosenDestination()">Submit</button>
+  <button class="btn" (click)="goAndSetUrl(tripRef.location)">Submit</button>
 </div>
