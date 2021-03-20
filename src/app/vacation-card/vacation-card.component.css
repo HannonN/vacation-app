@@ -3,4 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 3px solid #d0674e;
+  border-radius: 2px;
+  margin: 10%;
+}
+
+.thumbnail {
+  width: 40%;
+  height: auto;
+}
+
+.explore-btn {
+  display: block;
+  width: 100%;
+  /* padding: 2%; */
+  font-size: 20px;
+  text-align: center;
 }

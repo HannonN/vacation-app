@@ -10,7 +10,7 @@ import { myTags } from './tags';
 })
 export class SygicService {
   sygicApiKey: string = secret.sygicApiKey;
-  sygicBaseUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list/?limit=1024`;
+  sygicBaseUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list`;
   // sygicCategoriesUrl: string = `https://api.sygictravelapi.com/1.2/en/places/list?categories=hiking`;
   tags: string[] = myTags;
   tagListString: string = '';
@@ -59,6 +59,7 @@ export class SygicService {
     let params: any = {
       area: `${obj.lat},${obj.lon},${radius}`,
       tags: this.tagListString,
+      limit: 1024,
     };
     console.log(params);
     return this.httpClient.get(`${this.sygicBaseUrl}`, {
@@ -91,4 +92,6 @@ export class SygicService {
       }
     }
   };
+
+  getDestinationsFromSygic = () => {};
 }

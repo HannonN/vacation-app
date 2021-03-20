@@ -30,7 +30,7 @@ export class VacationDestinationComponent implements OnInit {
         .getItemsFromSygic(response.params)
         .subscribe((response: any) => {
           this.position = this.vacationService.getLocation();
-          // this.trips = this.sygicService.fisherShuffle(response.data.places);
+          // this.trips = this.sygicService.fisherShuffle(response.data.places); /// makes {{tripRef.name}} undefined -
           this.trips = response.data.places;
           this.trips.forEach((item: any) => {
             let sideA: number = Math.abs(
@@ -46,17 +46,8 @@ export class VacationDestinationComponent implements OnInit {
     });
   }
 
-  test = () => {
-    console.log(
-      this.trips.sort((firstEl: any, secondEl: any) => {
-        return firstEl.distance > secondEl.distance;
-      })
-    );
-  };
-
   sortByDistance = (sortBy: string) => {
     let newArray: any = [];
-
     if (sortBy === '') {
       console.log('no sort');
       return this.trips;
