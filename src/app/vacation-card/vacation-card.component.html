@@ -1,7 +1,17 @@
 <div class="main-result">
   <p class="title">{{ tripRef.name }}</p>
-  <img src="{{ tripRef.thumbnail_url }}" alt="thumbnail" />
+  <img
+    class="thumbnail"
+    src="{{ tripRef.thumbnail_url }}"
+    onerror="this.src='./assets/Lezgo-default.jpg'"
+    alt="thumbnail image"
+  />
   <p class="place">{{ tripRef.name_suffix }}</p>
   <p class="details">{{ tripRef.perex }}</p>
-  <button class="btn" (click)="goAndSetUrl(tripRef.location)">Submit</button>
+  <p class="map-url">
+    <a href="{{ tripRef.url }}">Click here to see a map!</a>
+  </p>
+  <button class="btn explore-btn" (click)="goAndSetUrl(tripRef.location)">
+    Explore<span>&rarr;</span>
+  </button>
 </div>
