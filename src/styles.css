@@ -10,8 +10,8 @@ body {
 
 .btn {
   color: #ffffff;
-  border-radius: 15%;
-  padding: 5%;
+  border-radius: 2rem;
+  padding: 2.5%;
   border-color: #ffffff;
   opacity: 0.9;
   background: none;
