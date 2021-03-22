@@ -1,46 +1,67 @@
-<app-header></app-header>
-<h2>How would you like to travel?</h2>
-<form #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
-  <input type="radio" id="travelType" name="travelType" value="plane" ngModel />
-  <label for="plane">Plane</label>
-  <input type="radio" id="travelType" name="travelType" value="train" ngModel />
-  <label for="train">Train</label>
-  <input type="radio" id="travelType" name="travelType" value="car" ngModel />
-  <label for="car">Car</label>
-  <input type="radio" id="travelType" name="travelType" value="boat" ngModel />
-  <label for="boat">Boat</label>
-  <input
-    type="radio"
-    id="travelType"
-    name="travelType"
-    value="bicycle"
-    ngModel
-  />
-  <label for="bicycle">Bicycle</label>
-  <h2>How long do you want to spend traveling?</h2>
-  <select type="selector" name="travelTime" id="travelTime" ngModel>
-    <option value=""></option>
-    <option value="1">1 Hours</option>
-    <option value="2">2 Hours</option>
-    <option value="3">3 Hours</option>
-    <option value="4">4 Hours</option>
-    <option value="5">5 Hours</option>
-    <option value="6">6 Hours</option>
-    <option value="7">7 Hours</option>
-    <option value="8">8 Hours</option>
-    <option value="9">9 Hours</option>
-    <option value="10">10 Hours</option>
-  </select>
-
-  <ng-multiselect-dropdown
-    [placeholder]="'Search for tags'"
-    [settings]="dropdownSettings"
-    [data]="dropdownList"
-    [(ngModel)]="selectedItems"
-    (onSelect)="onItemSelect($event)"
-  >
-  </ng-multiselect-dropdown>
-  <button class="btn">Get Trips</button>
-</form>
+<main class="main-background">
+  <app-header></app-header>
+  <h2>How would you like to travel?</h2>
+  <form class="form" #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
+    <input
+      type="radio"
+      id="travelType"
+      name="travelType"
+      value="plane"
+      ngModel
+    />
+    <label for="plane">Plane</label>
+    <input
+      type="radio"
+      id="travelType"
+      name="travelType"
+      value="train"
+      ngModel
+    />
+    <label for="train">Train</label>
+    <input type="radio" id="travelType" name="travelType" value="car" ngModel />
+    <label for="car">Car</label>
+    <input
+      type="radio"
+      id="travelType"
+      name="travelType"
+      value="boat"
+      ngModel
+    />
+    <label for="boat">Boat</label>
+    <input
+      type="radio"
+      id="travelType"
+      name="travelType"
+      value="bicycle"
+      ngModel
+    />
+    <label for="bicycle">Bicycle</label>
+    <h2>How long do you want to spend traveling?</h2>
+    <select type="selector" name="travelTime" id="travelTime" ngModel>
+      <option value=""></option>
+      <option value="1">1 Hours</option>
+      <option value="2">2 Hours</option>
+      <option value="3">3 Hours</option>
+      <option value="4">4 Hours</option>
+      <option value="5">5 Hours</option>
+      <option value="6">6 Hours</option>
+      <option value="7">7 Hours</option>
+      <option value="8">8 Hours</option>
+      <option value="9">9 Hours</option>
+      <option value="10">10 Hours</option>
+    </select>
+    <div class="multiselect">
+      <ng-multiselect-dropdown
+        [placeholder]="'Search for tags'"
+        [settings]="dropdownSettings"
+        [data]="dropdownList"
+        [(ngModel)]="selectedItems"
+        (onSelect)="onItemSelect($event)"
+      >
+      </ng-multiselect-dropdown>
+    </div>
+    <button class="btn">Get Trips</button>
+  </form>
+</main>
 
 <!-- <div class="container text-container"> -->
