@@ -1,9 +1,16 @@
 .background-container {
-  background-image: url("https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg");
-  height: 100vh;
-  width: auto;
-  background-repeat: no-repeat;
+  background: url('https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  overflow: hidden; /* Hide scrollbars */
+}
+.title {
+  margin: 0;
+}
+.ele-pitch {
+  padding: 0;
 }
 
 .home-content {
@@ -18,10 +25,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.37rem;
   text-align: center;
   margin: 1%;
-  padding: 5%;
+  padding: 0;
 }
 
 .get-started {

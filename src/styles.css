@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 body {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   color: #ffffff;
 }
 
@@ -36,5 +36,5 @@ html {
 }
 
 html {
-  background-color: #344d90;
+  /* background-color: #344d90; */
 }
