@@ -12,8 +12,8 @@ import { myTags } from '../tags';
   styleUrls: ['./vacation-form.component.css'],
 })
 export class VacationFormComponent implements OnInit {
-  @Output() userForm: any = new EventEmitter<any>();
-  @Output() selectTags: any = new EventEmitter<any>();
+  // @Output() userForm: any = new EventEmitter<any>(); //this is dead to us.
+  // @Output() selectTags: any = new EventEmitter<any>(); //this is dead to us.
   tagsList: any = [];
   dropdownList: any = myTags;
   selectedItems: any = [];
@@ -44,10 +44,10 @@ export class VacationFormComponent implements OnInit {
   //     this.vacationService.setLocation(position)
   //   })
   // }
-  getFormData = (formData: NgForm): void => {
-    this.userForm.emit(formData);
-    console.log(formData);
-  };
+  // getFormData = (formData: NgForm): void => {
+  //   this.userForm.emit(formData);
+  //   console.log(formData);
+  // };
   // clean = (obj: any) => {
   //   for (let prop in obj) {
   //     if (!obj[prop]) {
