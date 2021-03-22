@@ -19,7 +19,7 @@ body {
 
 .btn:hover {
   background-color: #f38262;
-  box-shadow: 2px 3px 5px #344d90;
+  box-shadow: 2px 3px 5px #000;
 }
 
 html {

@@ -1,0 +1,9 @@
+.footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.insta-icon {
+  width: 10%;
+  height: auto;
+}
