@@ -1,8 +1,33 @@
+.background-container {
+  background-image: url("https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg");
+  height: 100vh;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-content {
+  background-color: rgba(160, 160, 160, 0.473);
+  margin: 2%;
+  border-radius: 3px;
+}
+
 .bio-container {
   width: 90vw;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1%;
+  padding: 5%;
+}
+
+.get-started {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1%;
+  padding: 5px;
 }
