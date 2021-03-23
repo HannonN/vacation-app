@@ -1,0 +1,18 @@
+.card-list {
+  display: flex;
+  padding: 3rem;
+  overflow-x: scroll;
+}
+.card-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #344d90;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+.card-list::-webkit-scrollbar-track {
+  background: #344d90;
+}
