@@ -24,7 +24,6 @@ export class VacationResultComponent implements OnInit {
 
       this.getVacationCards(response.params);
     });
-
     //-----------------------------------------
     this.position = this.vacationService.getLocation();
     if (!this.position) {
