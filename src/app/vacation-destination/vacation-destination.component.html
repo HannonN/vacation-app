@@ -1,7 +1,7 @@
 <app-header></app-header>
-<button (click)="setSort('')">no sort</button>
-<button (click)="setSort('ascending')">ascending</button>
-<button (click)="setSort('descending')">descending</button>
+<button class="btn" (click)="setSort('')">no sort</button>
+<button class="btn" (click)="setSort('ascending')">ascending</button>
+<button class="btn" (click)="setSort('descending')">descending</button>
 <div *ngIf="trips.length > 0">
   <app-vacation-card
     *ngFor="let trip of sortByDistance(sortBy)"

@@ -1,10 +1,15 @@
 <app-header></app-header>
 <section>
   <p>Here's your results</p>
-  <app-vacation-card
-    *ngFor="let trip of trips; index as i"
-    [tripRef]="trip"
-  ></app-vacation-card>
+  <button class="btn" (click)="setSort('')">no sort</button>
+  <button class="btn" (click)="setSort('ascending')">ascending</button>
+  <button class="btn" (click)="setSort('descending')">descending</button>
+  <section class="card-list">
+    <app-vacation-card
+      *ngFor="let trip of sortByDistance(sortBy)"
+      [tripRef]="trip"
+    ></app-vacation-card>
+  </section>
   <!-- <p>Not into this one? Click next</p> -->
   <!-- <button>Back</button><button>Next</button> -->
 </section>
