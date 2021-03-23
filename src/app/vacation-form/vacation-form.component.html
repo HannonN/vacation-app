@@ -1,57 +1,61 @@
 <main class="main-background">
   <app-header></app-header>
-  <h2>How would you like to travel?</h2>
+  <h2 class="titles">How would you like to travel?</h2>
   <form class="form" #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
     <section class="radio-btn-sec">
       <div class="box btn">
         <input
           type="radio"
-          id="travelType"
+          id="plane"
           name="travelType"
           value="plane"
           class="radio-btn"
           ngModel
         />
-        <label for="plane" class="plane">Plane</label>
-        <i class="fas fa-plane"></i>
+        <label for="plane" class="plane"><i class="fas fa-plane"></i></label>
       </div>
       <div class="box btn">
         <input
           type="radio"
-          id="travelType"
+          id="train"
           name="travelType"
           value="train"
           class="radio-btn"
           ngModel
         />
-        <label for="train" class="train">Train</label>
+        <label for="train" class="train"><i class="fas fa-subway"></i></label>
       </div>
       <div class="box btn">
         <input
           type="radio"
-          id="travelType"
+          id="car"
           name="travelType"
           value="car"
           class="radio-btn"
           ngModel
         />
-        <label for="car" class="car"><span> Car</span></label>
-        <i class="fas fa-car-side"></i>
+        <label for="car" class="car"><i class="fas fa-car-side"></i></label>
       </div>
       <div class="box btn">
         <input
           type="radio"
-          id="travelType"
+          id="bicycle"
           name="travelType"
           value="bicycle"
           class="radio-btn"
           ngModel
         />
-        <label for="bicycle" class="bike">Bicycle</label>
+        <label for="bicycle" class="bike"><i class="fas fa-bicycle"></i></label>
       </div>
     </section>
-    <h2>How long do you want to spend traveling?</h2>
-    <select type="selector" name="travelTime" id="travelTime" ngModel>
+    <h2 class="titles">How long do you want to spend traveling?</h2>
+    <select
+      type="selector"
+      name="travelTime"
+      id="travelTime"
+      class="time-dropdown"
+      ngModel
+    >
       <option value=""></option>
       <option value="1">1 Hours</option>
       <option value="2">2 Hours</option>
@@ -64,6 +68,7 @@
       <option value="9">9 Hours</option>
       <option value="10">10 Hours</option>
     </select>
+    <h2 class="titles">What are you looking to do/see?</h2>
     <div class="multiselect">
       <ng-multiselect-dropdown
         [placeholder]="'Search for tags'"
@@ -74,7 +79,7 @@
       >
       </ng-multiselect-dropdown>
     </div>
-    <button class="btn">Get Trips</button>
+    <button class="get-trips-btn">Get Trips</button>
   </form>
 </main>
 

@@ -1,8 +1,12 @@
 .main-background {
-  background: url("/assets/Form-background.png");
+  background: url('/assets/Form-background.png');
   height: 100vh;
   background-size: cover;
   background-position: center;
+}
+
+.titles {
+  text-align: center;
 }
 
 .form {
@@ -12,34 +16,50 @@
 
 .multiselect {
   width: max-content;
+  margin: auto;
+  position: relative;
+  right: 15px;
+}
+.radio-btn {
+  display: none;
 }
 
 .radio-btn-sec {
   display: flex;
   justify-content: space-evenly;
 }
-
-.btn:hover {
+.fas {
+  font-size: 35px;
+}
+.time-dropdown {
+  width: 60%;
+  margin: auto;
+}
+.btn:hover,
+.fas:hover {
+  background-color: #f38262;
+  transform: translateY(1px);
+}
+.btn:active {
   background-color: #f38262;
 }
 .box {
   background-color: #344d90;
-  height: 70px;
-  width: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10%;
+  width: 10%;
   align-items: center;
   border: 3px;
   border-radius: 0.5rem;
 }
-
-/* .fas {
-  WE NEED TO ASK MITCH HOW TO USE FONT AWESOME
+.get-trips-btn {
+  color: #ffffff;
+  font-size: x-large;
+  border-radius: 2rem;
+  padding: 2.5%;
+  border-color: #ffffff;
+  opacity: 0.7;
+  background-color: #344d90;
 }
-
-.fa-car-side {
-}
-
-.fa-plane {
-}
-
-.radio-btn {
-} */
