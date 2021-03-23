@@ -1,5 +1,5 @@
 .main-background {
-  background: url('/assets/Form-background.png');
+  background: url("/assets/Form-background.png");
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -13,3 +13,33 @@
 .multiselect {
   width: max-content;
 }
+
+.radio-btn-sec {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn:hover {
+  background-color: #f38262;
+}
+.box {
+  background-color: #344d90;
+  height: 70px;
+  width: 80px;
+  align-items: center;
+  border: 3px;
+  border-radius: 0.5rem;
+}
+
+/* .fas {
+  WE NEED TO ASK MITCH HOW TO USE FONT AWESOME
+}
+
+.fa-car-side {
+}
+
+.fa-plane {
+}
+
+.radio-btn {
+} */

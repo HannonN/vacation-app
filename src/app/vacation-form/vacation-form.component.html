@@ -2,40 +2,54 @@
   <app-header></app-header>
   <h2>How would you like to travel?</h2>
   <form class="form" #userForm="ngForm" (ngSubmit)="submitTripForm(userForm)">
-    <input
-      type="radio"
-      id="travelType"
-      name="travelType"
-      value="plane"
-      ngModel
-    />
-    <label for="plane">Plane</label>
-    <input
-      type="radio"
-      id="travelType"
-      name="travelType"
-      value="train"
-      ngModel
-    />
-    <label for="train">Train</label>
-    <input type="radio" id="travelType" name="travelType" value="car" ngModel />
-    <label for="car">Car</label>
-    <input
-      type="radio"
-      id="travelType"
-      name="travelType"
-      value="boat"
-      ngModel
-    />
-    <label for="boat">Boat</label>
-    <input
-      type="radio"
-      id="travelType"
-      name="travelType"
-      value="bicycle"
-      ngModel
-    />
-    <label for="bicycle">Bicycle</label>
+    <section class="radio-btn-sec">
+      <div class="box btn">
+        <input
+          type="radio"
+          id="travelType"
+          name="travelType"
+          value="plane"
+          class="radio-btn"
+          ngModel
+        />
+        <label for="plane" class="plane">Plane</label>
+        <i class="fas fa-plane"></i>
+      </div>
+      <div class="box btn">
+        <input
+          type="radio"
+          id="travelType"
+          name="travelType"
+          value="train"
+          class="radio-btn"
+          ngModel
+        />
+        <label for="train" class="train">Train</label>
+      </div>
+      <div class="box btn">
+        <input
+          type="radio"
+          id="travelType"
+          name="travelType"
+          value="car"
+          class="radio-btn"
+          ngModel
+        />
+        <label for="car" class="car"><span> Car</span></label>
+        <i class="fas fa-car-side"></i>
+      </div>
+      <div class="box btn">
+        <input
+          type="radio"
+          id="travelType"
+          name="travelType"
+          value="bicycle"
+          class="radio-btn"
+          ngModel
+        />
+        <label for="bicycle" class="bike">Bicycle</label>
+      </div>
+    </section>
     <h2>How long do you want to spend traveling?</h2>
     <select type="selector" name="travelTime" id="travelTime" ngModel>
       <option value=""></option>
