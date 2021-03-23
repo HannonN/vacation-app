@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  padding: 3rem;
+  /* padding: 3rem; */
   align-content: center;
   justify-content: center;
 }
@@ -10,13 +10,14 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  height: 550px;
-  width: 400px;
+  height: 350px;
+  width: 80%;
   min-width: 250px;
   padding: 1.5rem;
   border: 16px #000;
   box-shadow: -1rem 0 3rem #000;
   transition: 0.2s;
+  overflow-y: scroll;
 }
 
 .main-result:hover {
@@ -39,8 +40,8 @@
 
 .thumbnail {
   display: block;
-  width: 50%;
-  height: 25%;
+  width: 75%;
+  height: auto;
   border-radius: 50%;
   margin: 16px 10px;
 }
