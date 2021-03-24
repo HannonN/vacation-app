@@ -1,14 +1,17 @@
 <app-header></app-header>
 <!-- <button class="btn" (click)="setSort('')">no sort</button> -->
 <div class="destination-arrange-container">
-  <h2>Arrange your results</h2>
+  <h2 class="arrange-title">Arrange your results</h2>
   <button class="btn" (click)="setSort('ascending')">Nearest to You</button>
-  <h3>OR</h3>
+  <h3 class="arrange-title">OR</h3>
   <button class="btn" (click)="setSort('descending')">Furthest Away</button>
 </div>
+
 <div *ngIf="trips.length > 0">
-  <app-vacation-card
-    *ngFor="let trip of sortByDistance(sortBy)"
-    [tripRef]="trip"
-  ></app-vacation-card>
+  <section class="dest-card-list">
+    <app-vacation-card
+      *ngFor="let trip of sortByDistance(sortBy)"
+      [tripRef]="trip"
+    ></app-vacation-card>
+  </section>
 </div>

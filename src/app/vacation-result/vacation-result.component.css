@@ -1,3 +1,21 @@
+.result-arrange-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 2%;
+  flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
+}
+.result-title-arrange {
+  margin: 0px;
+}
+.loading {
+  text-align: center;
+  padding: 5rem;
+}
 .card-list {
   display: flex;
   padding: 3rem;
@@ -6,6 +24,8 @@
 .card-list::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+  position: relative;
+  bottom: 0;
 }
 .card-list::-webkit-scrollbar-thumb {
   background: #344d90;
