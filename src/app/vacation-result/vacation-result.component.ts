@@ -11,7 +11,7 @@ import { VacationService } from '../vacation.service';
 export class VacationResultComponent implements OnInit {
   trips: any;
   position: any;
-  sortBy: string = '';
+  sortByResult: string = '';
   constructor(
     private route: ActivatedRoute,
     private sygicService: SygicService,
@@ -62,7 +62,7 @@ export class VacationResultComponent implements OnInit {
     });
   };
 
-  sortByDistance = (sortBy: string) => {
+  sortByDistanceResults = (sortBy: string) => {
     let newArray: any = [];
     if (sortBy === '') {
       console.log('no sort');
@@ -99,7 +99,7 @@ export class VacationResultComponent implements OnInit {
     console.log(newArray);
   };
 
-  setSort = (sortTerm: string) => {
-    this.sortBy = sortTerm;
+  setSortResults = (sortTerm: string) => {
+    this.sortByResult = sortTerm;
   };
 }

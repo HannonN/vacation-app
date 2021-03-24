@@ -15,9 +15,9 @@ export class VacationFormComponent implements OnInit {
   // @Output() userForm: any = new EventEmitter<any>(); //this is dead to us.
   // @Output() selectTags: any = new EventEmitter<any>(); //this is dead to us.
   tagsList: any = [];
-  dropdownList: any = myTags;
+  tags: any = myTags;
   selectedItems: any = [];
-  dropdownSettings: any = {};
+  searchTerm: string = '';
   position: any;
   constructor(
     private router: Router,
@@ -29,25 +29,39 @@ export class VacationFormComponent implements OnInit {
     if (!this.position) {
       this.vacationService.setLocation();
     }
-    this.selectedItems = [];
-    this.dropdownSettings = {
-      singleSelection: false,
-      enableCheckAll: false,
-      itemsShowLimit: 5,
-      allowSearchFilter: true,
-      disabled: true,
-    };
   }
+
+  filterTags = (searchTerm: string) => {
+    if (!searchTerm) {
+      return this.tags;
+    } else {
+      return this.tags.filter((item: string) => {
+        return item
+          .toLowerCase()
+          .trim()
+          .includes(searchTerm.toLowerCase().trim());
+      });
+    }
+  };
+
+  onSelect = (event: any) => {
+    console.log(event.source.value);
+    if (!this.selectedItems.includes(event.source.value)) {
+      this.selectedItems.push(event.source.value);
+      console.log(this.selectedItems);
+    }
+  };
 
   submitTripForm = (form: NgForm) => {
     this.position = this.vacationService.getLocation();
     console.log(this.selectedItems);
     console.log(this.position);
     let obj: any = form.form.value;
+    delete obj.someBullshit;
     // this.clean(obj);
     obj.lat = this.position.coords.latitude;
     obj.lon = this.position.coords.longitude;
-    obj.tags = this.tagsList;
+    obj.tags = this.selectedItems;
     this.router.navigate(['/vacation-result'], {
       queryParams: obj,
     });
