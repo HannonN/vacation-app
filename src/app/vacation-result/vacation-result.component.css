@@ -14,7 +14,11 @@
 }
 .loading {
   text-align: center;
-  padding: 5rem;
+}
+.loading-gif {
+  width: 50vw;
+  height: auto;
+  /* padding: 5rem; */
 }
 .card-list {
   display: flex;
