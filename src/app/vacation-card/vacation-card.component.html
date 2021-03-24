@@ -13,7 +13,11 @@
     <p class="details">{{ tripRef?.perex }}</p>
     <p class="distance">{{ tripRef?.distance }} Miles Away</p>
     <!-- <p class="duration">{{ tripRef?.duration }} Hours Away</p> -->
-    <button class="btn explore-btn" (click)="goAndSetUrl(tripRef.location)">
+    <button
+      *ngIf="['/vacation-result']"
+      class="btn explore-btn"
+      (click)="goAndSetUrl(tripRef.location)"
+    >
       Explore<span>&rarr;</span>
     </button>
   </div>
