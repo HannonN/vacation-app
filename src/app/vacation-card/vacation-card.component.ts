@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
-import { SygicService } from '../sygic.service'
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SygicService } from '../sygic.service';
 
 @Component({
   selector: 'app-vacation-card',
@@ -8,14 +8,15 @@ import { SygicService } from '../sygic.service'
   styleUrls: ['./vacation-card.component.css'],
 })
 export class VacationCardComponent implements OnInit {
-  @Input() tripRef: any //should this be an array?
+  @Input() tripRef: any; //should this be an array?
+  @Input() isResult: boolean = false;
   destinationTags: string[] = [
     'Market',
     'Park',
     'Restaurant',
     'Museums',
     'Hidden Gem',
-  ]
+  ];
 
   constructor(private sygicService: SygicService, private router: Router) {}
 
@@ -23,7 +24,7 @@ export class VacationCardComponent implements OnInit {
 
   // the follwoing query params are not being read by the second call for vacation destinations results.
   goAndSetUrl = (coords: any) => {
-    console.log(coords)
+    console.log(coords);
 
     this.router.navigate(['/vacation-destination'], {
       queryParams: {
@@ -32,8 +33,8 @@ export class VacationCardComponent implements OnInit {
         radius: 16090,
         tags: this.destinationTags.join('|'),
       },
-    })
-  }
+    });
+  };
 
   // // card to be picked, reacting from the method called in the service.
   // chosenDestination = (coords: any) => {
