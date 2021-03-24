@@ -17,6 +17,7 @@
     <app-vacation-card
       *ngFor="let trip of sortByDistanceResults(sortByResult)"
       [tripRef]="trip"
+      [isResult]="false"
     ></app-vacation-card>
   </section>
   <!-- <p>Not into this one? Click next</p> -->
