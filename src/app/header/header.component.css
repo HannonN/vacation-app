@@ -5,7 +5,6 @@
   position: relative;
 }
 .logo {
-  padding-top: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,43 +13,22 @@
   margin: auto;
   border-radius: 50%;
   /* position: absolute; */
-  background-size: 100%;
-  left: 25%;
-  right: 25%;
+  /* background-size: 100%; */
+  /* left: 25%;
+  right: 25%; */
 }
-.logo:before {
-  content: '';
-  position: absolute;
-  top: 1%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 0px,
-    #ffffff,
-    rgba(255, 255, 255, 0) 58%
-  );
-  /* -webkit-filter: blur(5px);
-  z-index: 2; */
-}
-.logo:after {
-  content: '';
-  position: absolute;
-  border-radius: 100%;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(
-    circle at 50% 30%,
-    rgba(245, 237, 48, 0),
-    rgba(200, 190, 20, 0.2) 50%,
-    #575300 100%
-  );
-}
+
 .home-btn {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+@media only screen and (min-width: 580px) {
+  .logo {
+    width: 15%;
+    height: 15%;
+    border-style: dotted;
+    margin: 0;
+  }
 }

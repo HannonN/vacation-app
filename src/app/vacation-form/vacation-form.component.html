@@ -12,7 +12,9 @@
           class="radio-btn"
           ngModel
         />
-        <label for="plane" class="plane"><i class="fas fa-plane"></i></label>
+        <label for="plane" class="plane icon-box"
+          ><i class="fas fa-plane"></i
+        ></label>
       </div>
       <div class="box btn">
         <input
@@ -23,7 +25,9 @@
           class="radio-btn"
           ngModel
         />
-        <label for="train" class="train"><i class="fas fa-subway"></i></label>
+        <label for="train" class="train icon-box"
+          ><i class="fas fa-subway"></i
+        ></label>
       </div>
       <div class="box btn">
         <input
@@ -34,7 +38,9 @@
           class="radio-btn"
           ngModel
         />
-        <label for="car" class="car"><i class="fas fa-car-side"></i></label>
+        <label for="car" class="car icon-box"
+          ><i class="fas fa-car-side"></i
+        ></label>
       </div>
       <div class="box btn">
         <input
@@ -45,29 +51,33 @@
           class="radio-btn"
           ngModel
         />
-        <label for="bicycle" class="bike"><i class="fas fa-bicycle"></i></label>
+        <label for="bicycle" class="bike icon-box"
+          ><i class="fas fa-bicycle"></i
+        ></label>
       </div>
     </section>
     <h2 class="titles">How long do you want to spend traveling?</h2>
-    <select
-      type="selector"
-      name="travelTime"
-      id="travelTime"
-      class="time-dropdown"
-      ngModel
-    >
-      <option value=""></option>
-      <option value="1">1 Hours</option>
-      <option value="2">2 Hours</option>
-      <option value="3">3 Hours</option>
-      <option value="4">4 Hours</option>
-      <option value="5">5 Hours</option>
-      <option value="6">6 Hours</option>
-      <option value="7">7 Hours</option>
-      <option value="8">8 Hours</option>
-      <option value="9">9 Hours</option>
-      <option value="10">10 Hours</option>
-    </select>
+    <div class="dropdown-box">
+      <select
+        type="selector"
+        name="travelTime"
+        id="travelTime"
+        class="time-dropdown"
+        ngModel
+      >
+        <option value=""></option>
+        <option value="1">1 Hours</option>
+        <option value="2">2 Hours</option>
+        <option value="3">3 Hours</option>
+        <option value="4">4 Hours</option>
+        <option value="5">5 Hours</option>
+        <option value="6">6 Hours</option>
+        <option value="7">7 Hours</option>
+        <option value="8">8 Hours</option>
+        <option value="9">9 Hours</option>
+        <option value="10">10 Hours</option>
+      </select>
+    </div>
     <h2 class="titles">What are you looking to do/see?</h2>
     <div>
       <p *ngFor="let item of selectedItems">{{ item }}</p>
