@@ -1,9 +1,15 @@
 <app-header></app-header>
 <section>
-  <p>Here's your results</p>
-  <button class="btn" (click)="setSortResults('')">no sort</button>
-  <button class="btn" (click)="setSortResults('ascending')">ascending</button>
-  <button class="btn" (click)="setSortResults('descending')">descending</button>
+  <div class="result-arrange-container">
+    <h2>Arrange your results</h2>
+    <button class="btn" (click)="setSortResults('ascending')">
+      Nearest to You
+    </button>
+    <h3>OR</h3>
+    <button class="btn" (click)="setSortResults('descending')">
+      Furthest Away
+    </button>
+  </div>
   <section class="card-list">
     <app-vacation-card
       *ngFor="let trip of sortByDistanceResults(sortByResult)"
