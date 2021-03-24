@@ -69,15 +69,29 @@
       <option value="10">10 Hours</option>
     </select>
     <h2 class="titles">What are you looking to do/see?</h2>
-    <div class="multiselect">
-      <ng-multiselect-dropdown
-        [placeholder]="'Search for tags'"
-        [settings]="dropdownSettings"
-        [data]="dropdownList"
-        [(ngModel)]="selectedItems"
-        (onSelect)="onItemSelect($event)"
-      >
-      </ng-multiselect-dropdown>
+    <div>
+      <p *ngFor="let item of selectedItems">{{ item }}</p>
+    </div>
+    <div class="tag-box">
+      <mat-form-field>
+        <mat-label>Enter Your Tags</mat-label>
+        <input
+          type="text"
+          matInput
+          [matAutocomplete]="auto"
+          [(ngModel)]="searchTerm"
+          name="someBullshit"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of filterTags(searchTerm)"
+            [value]="option"
+            (onSelectionChange)="onSelect($event)"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
     </div>
     <button class="get-trips-btn">Get Trips</button>
   </form>

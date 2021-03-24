@@ -1,12 +1,12 @@
 <app-header></app-header>
 <section>
   <p>Here's your results</p>
-  <button class="btn" (click)="setSort('')">no sort</button>
-  <button class="btn" (click)="setSort('ascending')">ascending</button>
-  <button class="btn" (click)="setSort('descending')">descending</button>
+  <button class="btn" (click)="setSortResults('')">no sort</button>
+  <button class="btn" (click)="setSortResults('ascending')">ascending</button>
+  <button class="btn" (click)="setSortResults('descending')">descending</button>
   <section class="card-list">
     <app-vacation-card
-      *ngFor="let trip of sortByDistance(sortBy)"
+      *ngFor="let trip of sortByDistanceResults(sortByResult)"
       [tripRef]="trip"
     ></app-vacation-card>
   </section>

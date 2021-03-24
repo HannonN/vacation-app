@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInput, MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { VacationResultComponent } from './vacation-result/vacation-result.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 import { VacationCardComponent } from './vacation-card/vacation-card.component';
 import { VacationDestinationComponent } from './vacation-destination/vacation-destination.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { VacationDestinationComponent } from './vacation-destination/vacation-de
     FormsModule,
     HttpClientModule,
     NgMultiSelectDropDownModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
