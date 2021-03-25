@@ -19,6 +19,10 @@ export class VacationFormComponent implements OnInit {
   selectedItems: any = [];
   searchTerm: string = '';
   position: any;
+  plane: boolean = false;
+  train: boolean = false;
+  car: boolean = false;
+  bike: boolean = false;
   constructor(
     private router: Router,
     private vacationService: VacationService,
@@ -62,6 +66,7 @@ export class VacationFormComponent implements OnInit {
     obj.lat = this.position.coords.latitude;
     obj.lon = this.position.coords.longitude;
     obj.tags = this.selectedItems;
+    obj.tags = this.selectedItems.slice(4, 1);
     this.router.navigate(['/vacation-result'], {
       queryParams: obj,
     });
@@ -71,4 +76,28 @@ export class VacationFormComponent implements OnInit {
     console.log(item);
     this.tagsList.push(item);
   }
+
+  travelTypeBox = (type: string) => {
+    if (type === 'plane') {
+      this.plane = true;
+      this.train = false;
+      this.car = false;
+      this.bike = false;
+    } else if (type === 'train') {
+      this.plane = false;
+      this.train = true;
+      this.car = false;
+      this.bike = false;
+    } else if (type === 'car') {
+      this.plane = false;
+      this.train = false;
+      this.car = true;
+      this.bike = false;
+    } else if (type === 'bike') {
+      this.plane = false;
+      this.train = false;
+      this.car = false;
+      this.bike = true;
+    }
+  };
 }

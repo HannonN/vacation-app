@@ -1,5 +1,5 @@
 .background-container {
-  background: url('https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg');
+  background: url("https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,13 +12,11 @@
 .ele-pitch {
   padding: 0;
 }
-
 .home-content {
   background-color: rgba(160, 160, 160, 0.493);
   margin: 2%;
   border-radius: 3px;
 }
-
 .bio-container {
   width: 90vw;
   height: auto;
@@ -30,7 +28,6 @@
   margin: 1%;
   padding: 0;
 }
-
 .get-started {
   display: flex;
   flex-direction: column;
@@ -48,7 +45,6 @@
     border-style: groove;
     border-color: #fff;
   }
-
   .footer {
     display: flex;
     justify-content: center;

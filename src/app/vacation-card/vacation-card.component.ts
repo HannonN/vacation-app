@@ -30,7 +30,7 @@ export class VacationCardComponent implements OnInit {
       queryParams: {
         lat: coords.lat,
         lon: coords.lng,
-        radius: 16090,
+        radius: 32180,
         tags: this.destinationTags.join('|'),
       },
     });
