@@ -1,11 +1,5 @@
 <app-header></app-header>
-<button class="btn" (click)="setSort('')">no sort</button> -->
-<div class="destination-arrange-container" *ngIf="trips.length === 0">
-  <h2 class="result-title-arrange">No Results Found</h2>
-  <button class="btn" routerLink="/vacation-result">
-    Back To Destinations
-  </button>
-</div>
+
 <div class="loading-dest" *ngIf="!trips">
   <img
     class="loading-gif-dest"
@@ -13,6 +7,13 @@
     alt="loading-gps"
   />
 </div>
+<div class="destination-arrange-container" *ngIf="trips.length === 0">
+  <h2 class="result-title-arrange">No Results Found</h2>
+  <button class="btn" routerLink="/vacation-result">
+    Back To Destinations
+  </button>
+</div>
+
 <section *ngIf="trips.length > 0">
   <div class="destination-arrange-container">
     <h2>Here's Some Other Attractions</h2>
