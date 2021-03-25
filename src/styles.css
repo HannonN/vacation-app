@@ -2,9 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-}
-body {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   color: #ffffff;
 }
 
@@ -23,27 +21,8 @@ body {
 }
 
 html {
-  /* position: fixed; */
-  /* top: 0; */
-  /* right: 0; */
-  bottom: 0;
-  /* left: 0;  */
   background-image: linear-gradient(to bottom, #82aecc, #344d90);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
-  z-index: -2;
-}
-
-html {
   background-color: #344d90;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
