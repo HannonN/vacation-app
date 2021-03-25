@@ -48,7 +48,8 @@
     display: grid;
   } */
   .result-arrange-container {
+    display: flex;
     width: 581px;
-    text-align: center;
+    margin: auto;
   }
 }
