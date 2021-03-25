@@ -1,23 +1,41 @@
 <app-header></app-header>
 <!-- <button class="btn" (click)="setSort('')">no sort</button> -->
-<div class="destination-arrange-container">
-  <h2>Here's Some Other Attractions</h2>
-  <h2 class="arrange-title">Arrange By</h2>
-  <button class="btn" (click)="setSort('ascending')">
-    Nearest to Destination
-  </button>
-  <h3 class="arrange-title">OR</h3>
-  <button class="btn" (click)="setSort('descending')">
-    Furthest Away from Destination
+<div class="destination-arrange-container" *ngIf="trips.length === 0">
+  <h2 class="result-title-arrange">No Results Found</h2>
+  <button class="btn" routerLink="/vacation-result">
+    Back To Destinations
   </button>
 </div>
-
-<div *ngIf="trips.length > 0">
-  <section class="dest-card-list">
-    <app-vacation-card
-      *ngFor="let trip of sortByDistance(sortBy)"
-      [tripRef]="trip"
-      [isResult]="false"
-    ></app-vacation-card>
-  </section>
-</div>
+<section *ngIf="trips.length > 0">
+  <div class="destination-arrange-container">
+    <h2>Here's Some Other Attractions</h2>
+    <h2 class="arrange-title">Arrange By</h2>
+    <button class="btn" (click)="setSort('ascending')">
+      Nearest to Destination
+    </button>
+    <h3 class="arrange-title">OR</h3>
+    <button class="btn" (click)="setSort('descending')">
+      Furthest Away from Destination
+    </button>
+  </div>
+  <div class="loading-dest" *ngIf="!trips">
+    <img
+      class="loading-gif-dest"
+      src="assets/Earth-4.5s-222px.gif"
+      alt="loading-gps"
+    />
+  </div>
+  <div *ngIf="trips.length > 0">
+    <section class="dest-card-list">
+      <app-vacation-card
+        *ngFor="let trip of sortByDistance(sortBy)"
+        [tripRef]="trip"
+        [isResult]="false"
+      ></app-vacation-card>
+    </section>
+    <section class="back-to-form-container">
+      <h3>Not what you're looking for? Click here to go back</h3>
+      <button class="btn" routerLink="/vacation-form">Back to Form</button>
+    </section>
+  </div>
+</section>
