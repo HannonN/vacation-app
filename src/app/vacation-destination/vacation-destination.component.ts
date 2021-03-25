@@ -11,7 +11,7 @@ import { VacationService } from '../vacation.service'
 })
 export class VacationDestinationComponent implements OnInit {
   @Input() tripRef: any
-  trips: any = []
+  trips: any
   position: any
   sortBy: string = ''
   constructor(
@@ -35,6 +35,7 @@ export class VacationDestinationComponent implements OnInit {
           this.position = this.vacationService.getLocation()
 
           this.trips = response.data.places
+          console.log(this.trips)
           this.sygicService.fisherShuffle(this.trips)
           this.trips.forEach((item: any) => {
             item.distance = this.sygicService.getDistanceFromLatLonInMiles(

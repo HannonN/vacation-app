@@ -3,6 +3,13 @@
   <h2 class="result-title-arrange">No Results Found</h2>
   <button class="btn" routerLink="/vacation-form">Back To Form</button>
 </div>
+<div class="loading" *ngIf="!trips">
+  <img
+    class="loading-gif"
+    src="assets/Earth-4.5s-222px.gif"
+    alt="loading-gps"
+  />
+</div>
 <section *ngIf="trips.length > 0">
   <div *ngIf="trips" class="result-arrange-container">
     <h2 class="result-title-arrange">Arrange your results</h2>
@@ -14,13 +21,6 @@
       Furthest Away
     </button>
     <p class="result-title-arrange">Click Explore to Learn More</p>
-  </div>
-  <div class="loading" *ngIf="!trips">
-    <img
-      class="loading-gif"
-      src="assets/Earth-4.5s-222px.gif"
-      alt="loading-gps"
-    />
   </div>
   <section class="card-list" *ngIf="trips">
     <app-vacation-card
