@@ -1,5 +1,5 @@
 .main-background {
-  background: url("/assets/Form-background.png");
+  background: url('/assets/Form-background.png');
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -123,11 +123,6 @@
 } */
 
 @media only screen and (min-width: 580px) {
-  .main-background {
-    height: 100%;
-    width: 100%;
-  }
-
   .dropdown-box {
     display: flex;
     justify-content: center;
