@@ -1,5 +1,5 @@
 .main-background {
-  background: url('/assets/Form-background.png');
+  background: url("/assets/Form-background.png");
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -21,6 +21,7 @@
   margin: auto;
   position: relative;
   right: 15px;
+  font-size: 20px;
 }
 .radio-btn {
   display: none;
@@ -48,6 +49,10 @@
 .box:active {
   background-color: #f38262;
 }
+
+.boxSelected {
+  background-color: #f38262;
+}
 .get-trips-btn {
   position: relative;
   bottom: 0;
@@ -56,8 +61,9 @@
   border-radius: 2rem;
   padding: 2.5%;
   border-color: #ffffff;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   background-color: #344d90;
+  width: 42%;
 }
 
 .icon-box {
@@ -72,7 +78,7 @@
 }
 
 .dropdown-box select {
-  background-color: #0563af;
+  background-color: #344d90;
   color: white;
   padding: 12px;
   width: 250px;
@@ -101,13 +107,20 @@
 }
 
 .dropdown-box:hover {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(3px);
 }
 
 .dropdown-box select option {
   padding: 30px;
 }
+
+.get-trips-div {
+  display: flex;
+  justify-content: center;
+}
+/* .selected-items {
+  z-index: -2;
+} */
 
 @media only screen and (min-width: 580px) {
   .main-background {
@@ -118,5 +131,32 @@
   .dropdown-box {
     display: flex;
     justify-content: center;
+  }
+  .get-trips-btn {
+    width: 42%;
+  }
+  .get-trips-div {
+    display: flex;
+    justify-content: center;
+  }
+  .fas {
+    font-size: 60px;
+  }
+
+  .titles {
+    font-size: 30px;
+  }
+
+  .selected-items {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-around;
+    flex-direction: row;
+    /* border: 2px solid #344d90;
+    background-color: rgba(160, 160, 160, 0.493); */
+  }
+  .ng-star-inserted {
+    border: 2px solid #344d90;
+    background-color: rgba(160, 160, 160, 0.493);
   }
 }

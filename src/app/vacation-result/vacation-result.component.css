@@ -1,11 +1,12 @@
 .result-arrange-container {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   text-align: center;
   padding: 0;
   margin: 2%;
   flex-wrap: wrap;
+
   /* justify-content: center;
   align-items: center; */
 }
@@ -26,17 +27,28 @@
   overflow-x: scroll;
 }
 .card-list::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 100px;
+  height: 20px;
   position: relative;
-  bottom: 0;
+  bottom: 10px;
+  background-color: #344d90;
 }
 .card-list::-webkit-scrollbar-thumb {
-  background: #344d90;
+  background-color: #f38262;
   border-radius: 10px;
   box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
     inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 .card-list::-webkit-scrollbar-track {
-  background: #344d90;
+  background-color: #344d90;
+}
+
+@media only screen and (min-width: 580px) {
+  /* .card-list {
+    display: grid;
+  } */
+  .result-arrange-container {
+    width: 581px;
+    text-align: center;
+  }
 }
