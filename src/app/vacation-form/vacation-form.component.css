@@ -1,5 +1,5 @@
 .main-background {
-  background: url('/assets/Form-background.png');
+  background: url("/assets/Form-background.png");
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -113,22 +113,40 @@
 .dropdown-box select option {
   padding: 30px;
 }
+.selected-items {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+  flex-direction: row;
+  /* border: 2px solid #344d90;
+  background-color: rgba(160, 160, 160, 0.493); */
+}
+
+.ng-star-inserted {
+  border: 2px solid #344d90;
+  background-color: rgba(160, 160, 160, 0.493);
+}
 
 .get-trips-div {
   display: flex;
   justify-content: center;
 }
+
 /* .selected-items {
   z-index: -2;
 } */
 
 @media only screen and (min-width: 580px) {
+  .main-background {
+    height: 100%;
+  }
   .dropdown-box {
     display: flex;
     justify-content: center;
   }
   .get-trips-btn {
     width: 42%;
+    bottom: 10px;
   }
   .get-trips-div {
     display: flex;
@@ -140,6 +158,43 @@
 
   .titles {
     font-size: 30px;
+  }
+
+  .selected-items {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-around;
+    flex-direction: row;
+    /* border: 2px solid #344d90;
+    background-color: rgba(160, 160, 160, 0.493); */
+  }
+  .ng-star-inserted {
+    border: 2px solid #344d90;
+    background-color: rgba(160, 160, 160, 0.493);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main-background {
+    height: 100%;
+  }
+  .dropdown-box {
+    display: flex;
+    justify-content: center;
+  }
+  .get-trips-btn {
+    width: 42%;
+    bottom: 10px;
+  }
+  .get-trips-div {
+    display: flex;
+    justify-content: center;
+  }
+  .fas {
+    font-size: 60px;
+  }
+
+  .titles {
+    font-size: 35px;
   }
 
   .selected-items {

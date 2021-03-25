@@ -1,5 +1,5 @@
 .background-container {
-  background: url('https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg');
+  background: url("https://blog.theclymb.com/wp-content/uploads/2017/06/iStock-582272480.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,12 +9,13 @@
 }
 .title {
   margin: 0;
+  margin-bottom: 5px;
 }
 .ele-pitch {
   padding: 0;
 }
 .home-content {
-  background-color: rgba(160, 160, 160, 0.493);
+  background-color: rgba(160, 160, 160, 0.774);
   margin: 2%;
   border-radius: 3px;
 }
