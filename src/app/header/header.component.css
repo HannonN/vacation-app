@@ -12,12 +12,16 @@
   height: auto;
   margin: auto;
   border-radius: 50%;
+  margin-top: 10px;
   /* position: absolute; */
   /* background-size: 100%; */
   /* left: 25%;
   right: 25%; */
 }
-
+.anchor:visited {
+  text-decoration: none;
+  color: white;
+}
 .home-btn {
   position: absolute;
   top: 10px;

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SygicService } from '../sygic.service';
 import { VacationService } from '../vacation.service';
 
@@ -14,6 +14,7 @@ export class VacationResultComponent implements OnInit {
   sortByResult: string = '';
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private sygicService: SygicService,
     private vacationService: VacationService
   ) {}
