@@ -1,6 +1,6 @@
 .main-background {
-  background: url('/assets/Form-background.png');
-  height: 100vh;
+  background: url("/assets/Form-background.png");
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
 }
@@ -143,6 +143,7 @@
   }
   .get-trips-btn {
     width: 42%;
+
     bottom: 10px;
   }
   .get-trips-div {
