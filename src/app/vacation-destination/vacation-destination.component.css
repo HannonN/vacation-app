@@ -10,6 +10,14 @@
   /* justify-content: center;
   align-items: center; */
 }
+.loading-dest {
+  text-align: center;
+}
+.loading-gif-dest {
+  width: 50vw;
+  height: auto;
+  /* padding: 5rem; */
+}
 .arrange-title {
   margin: 0px;
 }
@@ -30,6 +38,16 @@
 }
 .dest-card-list::-webkit-scrollbar-track {
   background: #344d90;
+}
+.back-to-form-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 2%;
+  flex-wrap: wrap;
+  width: 100vw;
 }
 
 @media only screen and (min-width: 580px) {
