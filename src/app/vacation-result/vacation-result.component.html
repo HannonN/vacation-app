@@ -1,5 +1,9 @@
 <app-header></app-header>
-<section>
+<div class="result-arrange-container" *ngIf="trips.length === 0">
+  <h2 class="result-title-arrange">No Results Found</h2>
+  <button class="btn" routerLink="/vacation-form">Back To Form</button>
+</div>
+<section *ngIf="trips.length > 0">
   <div *ngIf="trips" class="result-arrange-container">
     <h2 class="result-title-arrange">Arrange your results</h2>
     <button class="btn" (click)="setSortResults('ascending')">

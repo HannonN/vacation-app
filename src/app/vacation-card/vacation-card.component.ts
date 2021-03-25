@@ -16,6 +16,16 @@ export class VacationCardComponent implements OnInit {
     'Restaurant',
     'Museums',
     'Hidden Gem',
+    'Campsite',
+    'Contemporary Art',
+    'Street Art',
+    'Wildlife',
+    'Modern Art',
+    'Castle',
+    'City Park',
+    'Ruins',
+    'Forest',
+    'National Park',
   ];
 
   constructor(private sygicService: SygicService, private router: Router) {}

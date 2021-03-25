@@ -3,9 +3,13 @@
 <div class="destination-arrange-container">
   <h2>Here's Some Other Attractions</h2>
   <h2 class="arrange-title">Arrange By</h2>
-  <button class="btn" (click)="setSort('ascending')">Nearest to You</button>
+  <button class="btn" (click)="setSort('ascending')">
+    Nearest to Destination
+  </button>
   <h3 class="arrange-title">OR</h3>
-  <button class="btn" (click)="setSort('descending')">Furthest Away</button>
+  <button class="btn" (click)="setSort('descending')">
+    Furthest Away from Destination
+  </button>
 </div>
 
 <div *ngIf="trips.length > 0">

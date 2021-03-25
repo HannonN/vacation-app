@@ -37,6 +37,14 @@
   margin: 1%;
   padding: 5px;
 }
+
+.get {
+  background-color: #344d90;
+}
+
+.get:hover {
+  background-color: #f38262;
+}
 @media only screen and (min-width: 580px) {
   .home-content {
     width: 91vw;
