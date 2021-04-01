@@ -21,12 +21,6 @@ export class SygicService {
       headers: { 'x-api-key': `${this.sygicApiKey}` },
     });
   };
-  // getSygicApiCategories = () => {
-  //   return this.httpClient.get(this.sygicCategoriesUrl, {
-  //     headers: { 'x-api-key': `${this.sygicApiKey}` },
-  //     // params: { categories: `${this.sygicCategoriesUrl}` },
-  //   });
-  // };
 
   //need to convert meters to miles
   // car : 45mph - 72,420 meters per hour -
